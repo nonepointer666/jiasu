@@ -1,0 +1,196 @@
+/*con-left*/
+.img-title{
+
+}
+@-webkit-keyframes pulse {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes pulse {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.img_list:hover {
+    -webkit-animation: pulse 1s;
+    animation: pulse 1s;
+}
+
+.img_lists{
+    width: 800px;
+    margin-top: 5px;
+    height: 86px;
+
+}
+
+.img_list{
+    width: 127px;
+    height: 84px;
+    margin-left: 5px;
+    float: left;
+}
+.img_list:hover{
+    cursor: pointer;
+}
+.house_info{
+
+}
+.magin_left{
+    margin-left: 10px;
+}
+.house_info>div>div{
+    height: 100px;
+}
+.house_info>div>p{
+    font-size: 1.8em;
+}
+
+
+.h_icon1{
+    background: url("../images/sprice.png") no-repeat 0 -395px;
+
+}
+/*con-left end*/
+
+/*con-right*/
+.con_right{
+    width: 260px;
+    height: 400px;
+    /*border: rgba(128, 128, 128, 0.41) 1px solid;*/
+    border-radius: 3px;
+    background: white;
+
+}
+.use_time{
+    width: 93%;
+    height: 40px;
+    margin-left: 10px;
+    background-color: rgba(128, 128, 128, 0.16);
+    border: none;
+    outline:none;
+    border-radius: 2px;
+}
+.reserve{
+    width: 93%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 2px;
+    color: white;
+    background-color: var(--main-color);
+    margin: 5px 10px;
+}
+.con_icon{
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 20px auto;
+}
+.name_fd{
+    width: 150px;
+    margin-left:70px;
+}
+/*con-right  end*/
+
+/*详情*/
+.con_desc{
+    width: 100%;
+    height: 150px;
+    /*margin-top:40px;*/
+}
+.bw{
+    background-color: white;
+}
+.desc_fd1{
+    padding-top: 40px;
+    float: left;
+    width: 120px;
+    height:150px;
+    text-align: center;
+    line-height: 30px;
+
+}
+.desc_fd{
+    width:100%;
+    padding-top: 20px;
+}
+
+/*详情end*/
+
+/*规则*/
+.con_rule{
+   width: 100%;
+    background-color: white;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+
+}
+.rules{
+    width: 80%;
+    margin: auto;
+    /*height:160px;*/
+    padding-top: 20px;
+    /*background-color: black;*/
+    border-bottom: rgba(128, 128, 128, 0.21) 1px solid;
+}
+/*规则end*/
+
+/*点评*/
+.con_evaluate{
+    width: 100%;
+    background-color: white;
+    margin-top: 10px;
+    /*padding-bottom: 10px;*/
+    /*padding-top: 10px;*/
+}
+
+.score_evaluate{
+    color: var(--main-color);
+    line-height: 40px;
+    font-size: 1.4em;
+    margin-right: 40px;
+}
+.user_evaluate{
+    width: 88%;
+    margin: auto;
+}
+.user_evaluates{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: rgba(128, 128, 128, 0.21) 1px solid;
+
+}
+.user_icon{
+    width: 66px;
+    height: 66px;
+    border-radius:50%;
+}
+/*点评end*/
