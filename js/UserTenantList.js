@@ -13,7 +13,22 @@
     function $(str) {
         return document.querySelector(str)
     }
-
+    // 检查姓名格式？
+    function checkName() {
+        var regMobile=/^[\u4E00-\u9FA5\uf900-\ufa2d]{2,4}$/;
+        if(name_input.value){
+            if(regMobile.test(password.value)){
+                password_error.innerText='';
+                return true;
+            }else {
+                password_error.innerText='*密码必须大于六位';
+                return false;
+            }
+        }else {
+            password_error.innerText='*密码不能为空';
+            return false;
+        }
+    }
     // 检查密码格式？待修改
     function checkPassword() {
         var regMobile=/^\w{6,}$/;
@@ -101,25 +116,25 @@
                 <div class="basic_info">
                     <div class="basic_info_head">
                         <span class="sm-font main-color">社交信息</span><span class="tag info">越多的完善，越有助于在其他房东或者房客中产生信任</span>
-                        <span class="fr">编辑</span>
+                        <span class="fr" id="edit">编辑</span>
                     </div>
                     <div class="basic_info_body sm-font">
                         <ul>
                             <li class="sm-font">
-                                <label class="tag">性别：</label><span class="info">${data_all.sex}</span>
+                                <label class="tag">性别：</label><span ><input name="sex" type="radio" checked="checked"/>男<input name="sex" type="radio" />女</span><span class="info" id="sex">${data_all.sex}</span>
                             </li>
 
                             <li class="sm-font">
-                                <label class="tag">教育：</label><span  class="info">${data_all.education}</span>
+                                <label class="tag">教育：</label><span class="info" id="education">${data_all.education}</span>
                             </li>
                             <li class="sm-font">
-                                <label class="tag">工作：</label><span  class="info">${data_all.work}</span>
+                                <label class="tag">工作：</label><span  class="info" id="work">${data_all.work}</span>
                             </li>
                             <li class="sm-font">
-                                <label class="tag">出生日期：</label><span  class="info">${data_all.birthday}</span>
+                                <label class="tag">出生日期：</label><span class="info" id="birthday">${data_all.birthday}</span>
                             </li>
                             <li class="sm-font">
-                                <label class="tag">所在地区：</label><span  class="info">${data_all.region}</span>
+                                <label class="tag">所在地区：</label><span  class="info" id="region">${data_all.region}</span>
                             </li>
                         </ul>
                     </div>
@@ -132,11 +147,13 @@
                     <div class="basic_info_body sm-font">
                         <ul>
                             <li class="sm-font">
-                                <label class="tag">真实姓名：</label><span class="info" id="name"><input type="text"></span>
+                                <label class="tag">真实姓名：</label><span class="info" id="name">未填写</span>
                             </li>
+                            <div class="error" id="name_error"></div>
                             <li class="sm-font">
-                                <label class="tag">身份证：</label><span  class="info" id="id_card">342423********6016</span>
+                                <label class="tag">身份证：</label><span  class="info" id="id_card">未填写</span>
                             </li>
+                            <div class="error" id="id_card_error"></div>
                             <!--<li class="sm-font">-->
                                 <!--<label class="tag">护照：</label><span>未填写</span>-->
                             <!--</li>-->
@@ -150,7 +167,6 @@
                     e.target.innerText="保存";
                     let pro=e.target.previousElementSibling.innerText;
                     e.target.previousElementSibling.innerText="";
-                    // e.target.previousElementSibling.innerHTML=`aaa`;
 
                     // 用户名变成输入框，增加节点
                     var input=document.createElement('input');
@@ -171,7 +187,6 @@
                             var pro1=e.target.previousElementSibling.firstElementChild.value;
                             // 修改信息
                             let url_nick="http://127.0.0.1:8080/user/data/nick"
-                            console.log(pro1)
                             let key_name=e.target.id
                             data[key_name]=pro1
                             postData(url_nick,data,function (res) {
@@ -184,7 +199,6 @@
                         var pro1=e.target.previousElementSibling.firstElementChild.value;
                         // 修改信息
                         let url_nick="http://127.0.0.1:8080/user/data/nick"
-                        console.log(pro1)
                         let key_name=e.target.id
                         data[key_name]=pro1
                         postData(url_nick,data,function (res) {
@@ -193,15 +207,61 @@
                     }
                 }
             }
+            // 社交信息修改
+            var edit=$("#edit");
+            var sex=$("#sex");
+            var id_card=$("#id_card");
+            validate.onclick=function () {
+                if (validate.innerText=="验证") {
+                    name.innerHTML=`<input type="text" class="info_input" spellcheck="false" id="name_input">`
+                    id_card.innerHTML=`<input type="text" class="info_input" spellcheck="false" id="id_card_input">`
+                    validate.innerText="保存"
+                    var name_input=$("#name_input")
+                    var id_card_input=$("#id_card_input")
+                }
+                else if (validate.innerText=="保存") {
+                    var pro_name=name_input.value;
+                    var pro_id_card=id_card_input.value;
+                    // 修改信息
+                    let url_realInfo="http://127.0.0.1:8080/user/data/realInfo"
+
+                    data["name"]=pro_name;
+                    data["id_card"]=pro_id_card;
+                    postData(url_realInfo,data,function (res) {
+                        name.innerHTML=pro_name;
+                        id_card.innerHTML=pro_id_card;
+                    })
+
+                }
+            }
             //真实身份验证
             var validate=$("#validate");
             var name=$("#name");
             var id_card=$("#id_card");
             validate.onclick=function () {
                 if (validate.innerText=="验证") {
-                    // name.innerText=""
+                    name.innerHTML=`<input type="text" class="info_input" spellcheck="false" id="name_input">`
+                    id_card.innerHTML=`<input type="text" class="info_input" spellcheck="false" id="id_card_input">`
+                    validate.innerText="保存"
+                    var name_input=$("#name_input")
+                    var id_card_input=$("#id_card_input")
+                }
+                else if (validate.innerText=="保存") {
+                    var pro_name=name_input.value;
+                    var pro_id_card=id_card_input.value;
+                    // 修改信息
+                    let url_realInfo="http://127.0.0.1:8080/user/data/realInfo"
+
+                    data["name"]=pro_name;
+                    data["id_card"]=pro_id_card;
+                    postData(url_realInfo,data,function (res) {
+                        name.innerHTML=pro_name;
+                        id_card.innerHTML=pro_id_card;
+                    })
+
                 }
             }
+
 
         })
     }
