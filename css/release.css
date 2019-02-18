@@ -1,0 +1,233 @@
+/*头部标题*/
+.top{
+    width: 100%;
+    height: 146px;
+    background-color:white;
+    padding-top: 80px;
+}
+.top_box{
+    width:70%;
+    margin: auto;
+}
+.course_list>div{
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    color: rgba(128, 128, 128, 0.66);
+    font-size: 1em;
+}
+.course_list>div>span{
+    font-size:1.2em;
+}
+.house_base{
+
+}
+.house_facility{
+
+}
+.house_img{
+
+}
+body{
+    background-color: rgba(128, 128, 128, 0.11);
+}
+article{
+    width: 70%;
+    min-width: 800px;
+    margin:auto;
+
+}
+section{
+    margin-top: 20px;
+    background-color: white;
+}
+section p{
+    height: 40px;
+    line-height: 60px;
+    padding-left: 20px;
+}
+section p+div{
+    width: 96%;
+    margin:20px auto;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.31);
+}
+.space{
+    height: 20px;
+}
+
+.adrress_box{
+    height: 100px;
+}
+.box_left{
+    float: left;
+    width: 160px;
+    padding-left: 40px;
+    /*color: rgba(128, 128, 128, 0.59);*/
+}
+
+.box_right{
+    float: left;
+}
+fieldset {
+    width: 500px;
+    padding: 20px;
+    margin: 30px;
+    border: 1px solid #ccc;
+}
+
+legend{
+    font-size: 1em;
+    /*font-weight: bold;*/
+}
+
+#addr-show, #addr-show02,#addr-show03{
+    width: 200px;
+    height: 25px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    width: 80px;
+    height: 30px;
+    border-radius: 4px;
+    outline: none;
+    background-color: var(--main-color);
+    margin: 0 20px;
+    color: white;
+}
+
+.btn:disabled{
+    width: 80px;
+    height: 30px;
+    border-radius: 4px;
+    outline: none;
+    margin: 0 20px;
+    color: white;
+    background-color:#ccc;
+}
+select {
+    width: 120px;
+    height: 30px;
+}
+.rent_box{
+    height: 100px;
+}
+.style_lists{
+    float: left;
+    width: 120px;
+    height: 40px;
+    border: 1px solid rgba(128, 128, 128, 0.32);
+    border-radius: 5px;
+    margin-left:40px ;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    padding-left:0;
+}
+.stylelists{
+    float: left;
+    width: 120px;
+    height: 40px;
+    border: 1px solid rgba(128, 128, 128, 0.32);
+    border-radius: 5px;
+    margin-left:10px ;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    padding-left:0;
+}
+.active{
+    background-color: var(--main-color);
+    color: white;
+}
+.roomtype{
+    width: 100px;
+    height: 40px;
+    border: rgba(128, 128, 128, 0.51) 1px solid;
+    margin-left: 10px;
+    padding-left: 10px;
+    line-height: 40px;
+}
+.ju{
+    margin-left: 5px;
+}
+
+/*房源描述*/
+.description_box{
+    height: 120px;
+}
+.description_in_box{
+    height:220px;
+}
+.description_font{
+    font-size: 1.3em;
+    font-weight: 700;
+
+}
+.description_title{
+    width: 600px;
+    height: 60px;
+    padding: 10px 0 40px 10px;
+    overflow: hidden;
+}
+
+.description_in{
+    height: 174px;
+    overflow: hidden;
+    width: 600px;
+    padding: 10px 0 150px 10px;
+    white-space:normal;word-wrap:break-word;word-break:break-all
+}
+
+.btn_room{
+    width: 150px;
+    height: 50px;
+    border: 1px solid rgba(128, 128, 128, 0.32);
+    border-radius: 2px;
+    text-align: center;
+    margin-top: 20px;
+    line-height: 50px;
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: 700;
+    font-size: 1.3em;
+}
+textarea{
+    outline-color: var(--main-color);
+}
+
+/*2*/
+.facility_box{
+    margin-top:20px;
+    margin-left: 40px;
+}
+.checkboxs{
+    width: 15px;
+    height: 15px;
+    background-color: var(--main-color);
+    cursor: pointer;
+}
+.checkbox_label{
+    display: inline-block;
+    position: relative;
+    top:-4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+/*3*/
+.input_box{
+    width: 100px;
+    height: 100px;
+    background-image: url("../images/timg.jpg");
+    background-position:center;
+    background-size: cover;
+}
+.file_input{
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+}
+.file_box{
+    height: 160px;
+}

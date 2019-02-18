@@ -1,14 +1,17 @@
-body,a,ul,li,table{
+body,a,ul,li,table,p{
     margin: 0;
     padding: 0;
-    font-size: 12px;
     list-style: none;
     font-family:"微软雅黑";
 }
 
 a{
     text-decoration: none;
+
     /*display: inline-block;*/
+}
+input{
+    outline-color:var(--main-color);
 }
 .left{
     float: left;
@@ -31,6 +34,7 @@ big-font{
 .xs-w{
     font-weight: 700;
 }
+
 .min-font{
     font-size: 0.8em!important;
 }
@@ -56,8 +60,7 @@ big-font{
 }
 
 .tag{
-
-    color: rgba(128, 128, 128, 0.66);
+    color: rgba(128, 128, 128, 0.76);
 }
 
 .block{
@@ -75,4 +78,13 @@ big-font{
 }
 .pointer{
     cursor: pointer;
+}
+.color_tag{
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--main-color);
+
+}
+.color_border{
+    border: 1px solid var(--main-color);
 }

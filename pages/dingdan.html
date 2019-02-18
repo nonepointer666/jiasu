@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>佳宿订单页</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/foot.css">
+    <link rel="stylesheet" href="../css/sheng.css">
+    <link rel="stylesheet" href="../css/calendar.css">
+    <link rel="stylesheet" href="../css/model.css">
+    <link rel="stylesheet" href="../css/orderform.css">
+    <style type="text/css">
+
+    </style>
+
+
+
+</head>
+<body>
+<!------------------------------------------------头部-------------------------------->
+<nav class="navbar navbar-default">
+    <div class="container-fluid header_top ">
+        <div class="container w1">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+
+                <a class="navbar-brand m1" href="../homepage.html"><img src="../images/logo3.png" alt="Brand"></a>
+
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!--<form class="navbar-form navbar-left">-->
+                <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" placeholder="Search">-->
+                <!--</div>-->
+                <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                <!--</form>-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" id="showMode2">登陆</a></li>
+                    <li><a href="#" id="showModel">注册</a></li>
+                    <li><a href="#" id="my_order">我的订单</a></li>
+                    <li><a href="#">短租指南</a></li>
+                    <li><a href="#"><div class="topinner">发布房源</div></a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+<!------------------------------------------------------注册--------------------------------------------->
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <header class="modal-header">
+            <h4>注册</h4>
+            <span class="close">×</span>
+        </header>
+        <div class="modal-body">
+            <table>
+                <form action="#">
+                    <!--<tr>-->
+                    <!--<td class="col-1">昵称</td>-->
+                    <!--<td><input type="text" id="nickname" ></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td class="col-1"></td>-->
+                    <!--<td><div id="sss_error"></div></td>-->
+                    <!--</tr>-->
+                    <tr>
+                        <td class="col-1">手机号</td>
+                        <td><input type="text" id="txt_telephone" value="18715176483"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="telephone_error"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1">用户名</td>
+                        <td><input type="text" id="txt_username" ></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="username_error"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1">密码</td>
+                        <td><input type="password" id="txt_password"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="password_error"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1">确认密码</td>
+                        <td><input type="password" id="txt_password_confirm"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="confirm_error"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><input type="checkbox" id="check1" name="sport" class="check1" value="run" checked> <label for="check1">我同意
+                            <a href="">《服务协议》</a>, <a href="">《隐私服务条款》</a> </label></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><input type="button" class="btn-regist" value="立即注册"  id="btn_regist"></td>
+                    </tr>
+
+                </form>
+            </table>
+        </div>
+        <footer class="modal-footer">
+            <!--<button id="cancel">取消</button>-->
+            <!--<button id="sure">确定</button>-->
+        </footer>
+    </div>
+</div>
+<!------------------------------------------------------登陆--------------------------->
+
+<div id="modadeng" class="modal">
+    <div class="modal-content">
+        <header class="modal-header">
+            <h4>登陆</h4>
+            <span class="close1">×</span>
+        </header>
+        <div class="modal-body">
+            <table>
+                <form action="#">
+                    <tr>
+                        <td class="col-1">手机号</td>
+                        <td><input type="text" id="txt_telephone1" value="18715176483"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="telephone1_error"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1">密码</td>
+                        <td><input type="password" id="txt_password1"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="password1_error"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="v_container" style="width: 400px;height: 40px;"></div>
+                            <input type="text" id="code_input" value="" placeholder="请输入验证码"/>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="yanzhen_error"></div></td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><input type="button" class="btn-regist" value="立即登录"  id="btn_regist1"></td>
+                    </tr>
+
+                </form>
+            </table>
+        </div>
+        <footer class="modal-footer">
+            <!--<button id="cancel">取消</button>-->
+            <!--<button id="sure">确定</button>-->
+        </footer>
+    </div>
+</div>
+
+<!--------------------------------------------------中间部分---------------------------->
+<div class="container-fluid z111">
+    <div class="row">
+    <!-------------------左边主体-------------------------->
+    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+        <!--左边头部-->
+        <div class="left_header">
+            <div class="left_inner">
+                <div class="innerq1">
+                    <span class="innerq2">
+                        <i class="yuan"></i>
+                    </span>
+                    <span class="zi">申请预订</span>
+                </div>
+                <div class="xian"></div>
+                <div class="innerq1">
+                    <span class="innerq2">
+                        <i class="yuan1"></i>
+                    </span>
+                    <span class="zi">待支付</span>
+                </div>
+                <div class="xian1 "></div>
+                <div class="innerq1">
+                    <span class="innerq2">
+                        <i class="yuan1"></i>
+                    </span>
+                    <span class="zi">待入住</span>
+                </div>
+
+            </div>
+        </div>
+       <div class="biao1">预订信息</div>
+        <div class="li3"><div class="xin1">入住时段: <input type="text" id="test1"> 至 <input type="text" id="test2">
+            <div class="input_inner1 input_inner3 li4"></div><div class="input_inner1 input_inner3 li4 li5">
+            </div>
+        </div>
+    </div>
+        <div class="biao1">入住人信息</div>
+        <h4>填写包含手机号在内的完整信息</h4>
+        <h5>可免费获赠最高保额10万元住宿旅行意外保险</h5>
+        <h5>可同步下发智能门锁蓝牙钥匙，确保多人入住</h5>
+        <div class="jiabiao">
+            <div class="biaotou"></div>
+            <table>
+                <tr>
+                    <td >*真实姓名:</td>
+                    <td><input type="text" id="name" placeholder="请确保信息真实"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><div id="name_error"></div></td>
+                </tr>
+                <tr>
+                    <td>*身份证号:</td>
+                    <td><input type="text" id="idcard" placeholder="请确保信息真实"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><div id="idcard_error"></div></td>
+                </tr>
+                <tr>
+                    <td>手机号:</td>
+                    <td><input type="text" id="mobilenumber" placeholder="请确保信息真实"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><div id="mobilenumber_error"></div></td>
+                </tr>
+            </table>
+            <div class="jianbiao">取消</div>
+        </div>
+        <div class="li3"><div class="add_user">+添加入住人</div></div>
+        <div class="biao1">预订人信息</div>
+        <div class="nic">昵称: 守夜人</div>
+        <div class="li3 li1"><div class="nic1">手机号: &nbsp;+86 18715176483</div></div>
+        <div class="biao1">发票</div>
+        <div class="li6 li3">
+        <input type="radio" id="need" name="need" value="1" class="dian1" checked> <label for="need" class="dian">需要</label>
+        <input type="radio" id="neednot" name="need" value="0"  class="dian1"> <label for="neednot"class="dian">不需要</label>
+        </div>
+        <div class="biao1">退订须知</div>
+        <div class="biao2">交易规则</div>
+        <h5>入住前一天退订，需额外扣除1天订金作为违约金，剩余订金将原路退还给您。</h5>
+        <h5>取消订单和提前退房时间以小猪系统中记录的时间为准。如与房东产生争议，请致电佳宿客服电话：400 010 7890。</h5>
+        <div class="biao2">友情提示</div>
+        <h5>入住后如您认为照片与房间实际情况有较大差异时， 可将能够证明存在较大差异的材料（如带有拍摄日期水印的实地拍摄照片、短视频等） 提供</h5>
+        <h5>给佳宿客服进行审核；如佳宿工作人员核查认为材料真实、有效，佳宿将安排专门的客服人员与您联系， 并尽最大可能为您解决问题。因自然灾</h5>
+        <h5>害及其他不可抗拒因素导致的退订需求，由您和房东协商解决。</h5>
+        <h5>已支付押金在您入住完成后原路退还，该钱款不包含在订单总额内。</h5>
+        <div class="biao2">房东要求</div>
+        <h5>允许做饭、不允许带宠物、允许聚会、不允许吸烟、接待境外人士、入住人数：宜居4人，允许加客1人，￥50/人，加客费用线下收取、其他费</h5>
+        <h5>用：无</h5>
+        <div class="biao3"><input type="checkbox" id="check2" name="dingdan" class="check2" value="dingdan" checked> <label for="check2">我同意
+        <a href="">《服务协议》</a>, <a href="">《隐私服务条款》</a> ,<a href="">《意外保险健康告知书》</a> 及房东规定的退订规则及入住要求</label></div>
+        <div class="ding">提交订单</div>
+
+    </div>
+    <!--------------------------右边主体----------------------->
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <div class="right_outer">
+            <img src="../images/ding.jpg" class="tu1">
+            <div class="housename">
+                厦门北站 地铁口 精装两房一...
+        </div>
+            <div class="biao4 biao6">
+              <div class="biao5">
+                  <p>房租</p>
+                  <p>¥10500.00</p>
+              </div>
+                <div class="biao5 ">
+                    <p>押金</p>
+                    <p>¥200.00</p>
+                </div>
+            </div>
+            <div class="biao5 biao7">
+                <p>需在线支付</p>
+                <p>¥10700.00</p>
+            </div>
+            <div class="biao5 biao8">
+                <p>订单总额</p>
+                <p>¥10700.00</p>
+            </div>
+        </div>
+    </div>
+        <div>
+
+
+    </div>
+</div>
+<!----------------------------------------------尾部---------------------------------->
+<div class="foot_v2 footadd">
+    <ul class="foot_ul">
+        <li><a class="guide" href="http://www.xiaozhu.com/xzweb.php?op=Help_UserGuide&amp;type=tenant" target="_blank">房客指南</a></li>
+        <li><a class="guide icon_fk" href="http://www.xiaozhu.com/xzweb.php?op=Help_UserGuide&amp;type=landlord" target="_blank">房东指南</a></li>
+        <li>
+            <span class="guide_T">关于我们</span>
+            <a href="#" target="_blank">关于佳宿</a>
+            <a href="#" target="_blank">加入我们</a>
+            <a href="#" target="_blank">联系我们</a>
+        </li>
+        <li>
+            <span class="guide_T">网站帮助</span>
+            <a href="#" target="_blank">帮助中心</a>
+            <a href="#" target="_blank">网站地图</a>
+        </li>
+        <li class="width_280">
+            <span class="guide_T">网站协议</span><br>
+            <a href="#" target="_blank">服务协议</a>
+            <a href="#" target="_blank">房东规则</a>
+            <a href="#" target="_blank">房客规则</a>
+            <a href="#" target="_blank">房源上线标准</a>
+            <a href="#" target="_blank">隐私保护</a>
+            <a href="#" target="_blank">版权声明</a>
+            <a href="#" target="_blank">免责声明</a>
+            <a href="#" target="_blank">知识产权声明</a>
+            <a href="#" target="_blank">点评发布规则</a>
+        </li>
+        <li class="bigFont online_kf">
+            <span class=""><i class="glyphicon glyphicon-headphones"></i>在线客服</span>
+            <p>客服电话  400 - 010 - 7890</p>
+            <p>客服邮箱  service@jiasu.com</p>
+        </li>
+    </ul>
+    <div class="foot_btm">许可证号：苏ICP证140510号 &nbsp;&nbsp; <a href="//www.anquan.org/s/www.xiaozhu.com" |="" name="mt8SMvYyRDI92b06nuDs8dPFapllCJYidqhM1WlOoGRZ9DWpbo" rel="nofollow" target="_blank">安全联盟</a> &nbsp;&nbsp; 苏州三只爬虫信息科技有限公司 &nbsp;&nbsp; <a href="http://www.xiaozhu.com/images/yingye.jpg" |="" name="yingyezhizhao" rel="nofollow" target="_blank">营业执照号 103613118</a> <span style="display:none">  &nbsp;&nbsp; 地址：北京市海淀区知春路56号   &nbsp;&nbsp;电话：010-62961978</span>
+    </div>
+    <div style="width:300px;margin:0 auto;">
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020380" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="images/govRecord_icon.png" style="float:left;"><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#bdc3c7;">京公网安备 11010802020380号</p></a>
+    </div>
+</div>
+</div>
+</body>
+</html>
+<script src="../js/calendar.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/gVerify.js"></script>
+<script src="../js/header.js"></script>
+<script src="../js/order.js"></script>

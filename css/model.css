@@ -15,7 +15,7 @@ p{
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 1000;
+    z-index: 888;
     background-color: rgba(0,0,0,0.5);
 }
 .modal-content{
@@ -23,7 +23,7 @@ p{
     flex-flow: column nowrap;
     justify-content: space-between;
     width: 50%;
-    max-width: 700px;
+    max-width: 600px;
     height: 600px;
     max-height: 500px;
     margin: 100px auto;
@@ -33,6 +33,7 @@ p{
     animation: zoom 0.3s;
     resize: both;
     overflow: auto;
+    z-index: 999;
 }
 @-webkit-keyframes zoom{
     from {-webkit-transform: scale(0)}
@@ -48,13 +49,15 @@ p{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: rgba(50, 198, 190, 0.7);
 }
 .close{
-    color: #b7b7b7;
-    font-size: 30px;
+    color: black;
+    font-size: 40px;
     font-weight: bold;
-    margin-right: 10px;
+    margin-right: -240px;
     transition: all 0.1s;
+
 }
 .close:hover, .close:focus{
     color: #95b4ed;
@@ -63,10 +66,11 @@ p{
 }
 .close1{
     color: #b7b7b7;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
-    margin-right: 10px;
+
     transition: all 0.1s;
+    margin-right: -240px;
 }
 .close1:hover, .close1:focus{
     color: #95b4ed;
@@ -85,6 +89,7 @@ p{
     padding: 15px;
     justify-content: flex-end;
     align-items: center;
+    background-color: rgba(47, 187, 179, 0.7);
 }
 .modal-footer button{
     width: 60px;
@@ -109,19 +114,23 @@ p{
 .col-1{
 
     text-align: right;
-    color: gainsboro;
+    padding-right: 10px;
+    color: black;
 }
-table{
-    width: 100%;
-    height: 300px;
-    background-color: yellow;
+#modal table{
+    width: 80%;
+    height: 400px;
+
+    margin-left: 90px;
+
 }
 .btn-regist{
     width: 200px;
     height: 40px;
-    background-color: red;
+    background-color: #E33555;
     outline: none;
     border: 1px solid gainsboro;
+    color: white;
 }
 table div[id$='error']{
     color: red;
@@ -129,3 +138,24 @@ table div[id$='error']{
     height: 1em;
 
 }
+table input{
+    height: 34px;
+    width:260px;
+}
+.check1{
+    width: 14px;
+    height: 14px;
+    color: white;
+
+}
+#modadeng .modal-content{
+    height: 400px;
+}
+#modadeng table{
+    height:300px ;
+    margin-left: 110px;
+}
+.modal-header h4{
+    color: white;
+}
+

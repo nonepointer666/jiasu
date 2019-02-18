@@ -8,15 +8,12 @@
     color: var(--main-color);
     line-height:50px;
 }
+
 .logo{
     height: 50px;
     display: block;
 }
 
-.tag{
-    font-size: 1em;
-    color: rgba(128, 128, 128, 0.66);
-}
 
 .block{
     display:block;

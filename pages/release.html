@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width">
+    <meta name="keywords" content="佳宿房源搜索">
+    <meta name="description" content="佳宿房源搜索">
+    <title>发布房源</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/foot.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/release.css">
+
+
+</head>
+<body>
+<!--头部导航栏-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid header_top ">
+        <div class="container w1">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+
+                <a class="navbar-brand m1" href="#"><img src="../images/logo3.png" alt="Brand"></a>
+
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!--<form class="navbar-form navbar-left">-->
+                <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" placeholder="Search">-->
+                <!--</div>-->
+                <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                <!--</form>-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" id="showMode2">登陆</a></li>
+                    <li><a href="#" id="showModel">注册</a></li>
+                    <li><a href="#">我的订单</a></li>
+                    <li><a href="#">短租指南</a></li>
+                    <li><a href="#">
+                        <div class="topinner">发布房源</div>
+                    </a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+<!--头部导航栏end-->
+
+<!--主体部分-->
+<!--进程标识-->
+<div class="top">
+    <div class="top_box">
+        <div class="course_list row">
+            <div class="house_base col-sm-3 col-xs-3 col-md-3 main-color"><span>①</span>房源信息</div>
+            <div class="house_facility col-sm-3 col-xs-3 col-md-3"><span>②</span>配套设施</div>
+            <div class="house_img col-sm-3 col-xs-3 col-md-3"><span>③</span>真实照片</div>
+            <div class="house_img col-sm-3 col-xs-3 col-md-3"><span>④</span>价格规则</div>
+        </div>
+    </div>
+</div>
+<!--进程标识end-->
+
+<article>
+    <section>
+        <p class="color_tag">房源基本情况</p>
+        <div></div>
+        <!--房源地址-->
+        <div class="adrress_box">
+            <div class="box_left ">
+                房源地址:
+            </div>
+            <div class="box_right">
+                        <form  action = "#" >
+                            <label  for = "addr-show" >您选择的是：
+                                <input  type = "text"  value = ""  id = "addr-show" >
+                            </label >
+                            <br />
+
+                            <!--省份选择-->
+                            <select  id = "prov"  onchange ="showCity(this)" >
+                                <option >=请选择省份=</option >
+
+                            </select >
+
+                            <!--城市选择-->
+                            <select  id = "city"  onchange = "showCountry(this)" >
+                                <option >=请选择城市=</option >
+                            </select >
+
+                            <!--县区选择-->
+                            <select  id = "country"  onchange = "selecCountry(this)" >
+                                <option >=请选择县区=</option >
+                            </select >
+                            <button  type = "button"  class = "btn met1"  onClick = "showAddr()" >确定</button >
+                        </form >
+            </div>
+        </div>
+        <!--出租类型-->
+        <div class="rent_box">
+            <div class="box_left ">
+                出租类型:
+            </div>
+            <div class="box_right">
+                <p class="style_lists active">整套出租</p><p class="style_lists">独立单间</p><p class="style_lists">合住房间</p>
+            </div>
+            <input type="hidden" value="整套出租" id="rent_style">
+        </div>
+        <!--房屋户型:-->
+        <div class="rent_box">
+            <div class="box_left ">
+                房屋户型:
+            </div>
+            <div class="box_right">
+                <span class="min-font tag">请填写</span><span class="min-font main-color">整套房屋的户型(阿拉伯数字填写)</span>
+                <div id="roomtype">
+                    <input type="text" class="pointer roomtype" placeholder="请填写" id="shi"><span class="ju">室</span>
+                    <input type="text" class="pointer roomtype" placeholder="请填写" id="ting"><span class="ju">厅</span>
+                    <input type="text" class="pointer roomtype" placeholder="请填写" id="wei"><span class="ju">卫</span>
+                    <input type="text" class="pointer roomtype" placeholder="请填写" id="chu"><span class="ju">厨</span>
+                    <input type="text" class="pointer roomtype" placeholder="请填写" id="yangtai"><span class="ju">阳台</span>
+                </div>
+            </div>
+        </div>
+        <!--出租面积-->
+        <div class="rent_box">
+            <div class="box_left ">
+                出租面积:
+            </div>
+            <div class="box_right">
+                <span class="min-font tag">请填写</span><span class="min-font main-color">房客独享房间的使用面积(阿拉伯数字填写)</span>
+                <div id="">
+                    <input type="text" class="pointer roomtype" placeholder="请填写" id="area"><span class="ju">m&sup2;</span>
+                </div>
+            </div>
+        </div>
+        <!--卫生间类型-->
+        <div class="rent_box">
+            <div class="box_left ">
+                卫生间类型:
+            </div>
+            <div class="box_right" id="toilettype">
+                <p class="style_lists active">独立卫生间</p><p class="style_lists">共用卫生间</p>
+            </div>
+            <input type="hidden" value="独立卫生间" id="toilet">
+        </div>
+        <!--床铺信息-->
+        <div class="rent_box">
+            <div class="box_left ">
+                床铺信息:
+            </div>
+            <div class="box_right">
+                <span class="min-font tag">请填写</span><span class="min-font main-color">床铺数量(阿拉伯数字填写)</span>
+                <div id="1">
+                    <input type="text" class="pointer roomtype" placeholder="请填写" id="beds"><span class="ju">张</span>
+
+                </div>
+            </div>
+        </div>
+        <!--宜居人数-->
+        <div class="rent_box">
+            <div class="box_left ">
+                宜居人数:
+            </div>
+            <div class="box_right">
+                <span class="min-font tag">请填写</span><span class="min-font main-color">最适宜居住的人数，而不是最多入住人数。(阿拉伯数字填写)</span>
+                <div id="2">
+                    <input type="text" class="pointer roomtype" placeholder="请填写" id="number_of_people"><span class="ju">人</span>
+
+                </div>
+            </div>
+        </div>
+        <!--房源类型-->
+        <div class="rent_box">
+            <div class="box_left ">
+                房源类型:
+            </div>
+            <div class="box_right" id="houseStyle">
+                <p class="stylelists active">客栈</p>
+                <p class="stylelists">民居</p>
+                <p class="stylelists">老洋房</p>
+                <p class="stylelists">别墅</p>
+                <p class="stylelists">公寓</p>
+                <p class="stylelists">海景房</p>
+            </div>
+            <input type="hidden" value="客栈" id="house_style">
+        </div>
+
+    </section>
+
+    <section>
+        <p class="color_tag">房源描述</p>
+        <div></div>
+        <!--房源标题-->
+        <div class="description_box">
+            <div class="box_left description_font">
+                房源标题:
+            </div>
+            <div class="box_right">
+                <span class="tag">精炼的介绍特点和优势，让房客在第一时间对你的房源感兴趣</span>
+                <div><input type="text" class="description_title" placeholder="请填写,22字以内,建议地标+出租方式+房源形容词" id="room_title"></div>
+
+            </div>
+        </div>
+        <!--内部情况-->
+        <div class="description_in_box">
+            <div class="box_left description_font">
+                内部情况:
+            </div>
+            <div class="box_right">
+                <span class="tag">房屋内装修和装饰的风格，以及主要配套设施的介绍</span>
+                <div>
+                    <textarea rows="6" id="house_description" autoheight="true" placeholder="请填写.例：欧式田园小清新风格的装修，配备舒适的大床和床垫，相信您一定会舒舒服服的睡个好觉！除此之外卧室还有空调、衣柜、挂墙液晶电视、免费百兆wifi、以及独立的卫生间哦（24小时热水是妥妥的）！如果您想做饭，厨房免费提供给您，厨具调料齐备，快来大展厨艺吧！
+" class="description_in" id="roomRoominnerIntro"></textarea>
+                </div>
+
+            </div>
+        </div>
+        <!--个性描述：-->
+        <div class="description_in_box">
+            <div class="box_left description_font">
+                个性描述:<br>(选填)
+            </div>
+            <div class="box_right">
+                <span class="tag">向房客介绍一下自己的兴趣爱好，告诉房客能体验到的不一样的特色</span>
+                <div>
+                    <textarea rows="6" id="landlord_description" autoheight="true" placeholder="请填写.例：你将结识一个热情、爱分享、爱读书、喜欢音乐和下厨的IT男生，希望与你一同感受胡同里的悠闲与自在。
+" class="description_in" ></textarea>
+                </div>
+
+            </div>
+        </div>
+        <!--交通情况：-->
+        <div class="description_in_box">
+            <div class="box_left description_font">
+                交通情况:<br>(选填)
+            </div>
+            <div class="box_right">
+                <span class="tag">房源所处位置，以及周边交通情况的描述</span>
+                <div>
+                    <textarea rows="6" id="traffic" autoheight="true" placeholder="请填写. 例：位于安定门外大街，从安定门地铁站A口5分钟即到。楼下还有27路、119路等多条公交线路，十分方便。！
+" class="description_in"></textarea>
+                </div>
+
+            </div>
+        </div>
+        <!--周边情况-->
+        <div class="description_in_box">
+            <div class="box_left description_font">
+                周边情况:<br>(选填)
+            </div>
+            <div class="box_right">
+                <span class="tag">房源所在楼宇和小区的基本情况，以及周边商超、景点、银行、医院等配套设施等情况</span>
+                <div>
+                    <textarea rows="6" id="around" autoheight="true" placeholder="请填写.例：楼宇内安装有进口大品牌电梯，楼道干净整洁。同时小区内绿树环抱、清新怡人，在这里您不用担心大都市的吵闹，安静的只有风吹树叶声。物业管理安全有序，24小时保安巡视，行人出入需刷门禁卡，让您住的安全放心。小区周边设施齐全，餐饮设施有肯德基、永和大王、老上海城隍庙小吃等，金融机构有建设银行、中国银行等，医疗服务有解放军总医院。
+" class="description_in"></textarea>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="btn_room">保存并继续</div>
+
+
+
+
+</article>
+<!--主体部分end-->
+
+<!--foot-->
+<div class="foot_v2">
+    <ul class="foot_ul">
+        <li><a class="guide" href="http://www.xiaozhu.com/xzweb.php?op=Help_UserGuide&amp;type=tenant" target="_blank">房客指南</a>
+        </li>
+        <li><a class="guide icon_fk" href="http://www.xiaozhu.com/xzweb.php?op=Help_UserGuide&amp;type=landlord"
+               target="_blank">房东指南</a></li>
+        <li>
+            <span class="guide_T">关于我们</span>
+            <a href="#" target="_blank" class="tag">关于佳宿</a>
+            <a href="#" target="_blank" class="tag">加入我们</a>
+            <a href="#" target="_blank" class="tag">联系我们</a>
+        </li>
+        <li>
+            <span class="guide_T">网站帮助</span>
+            <a href="#" target="_blank" class="tag">帮助中心</a>
+            <a href="#" target="_blank" class="tag">网站地图</a>
+        </li>
+        <li class="width_280">
+            <span class="guide_T">网站协议</span><br>
+            <a href="#" target="_blank" class="tag">服务协议</a>
+            <a href="#" target="_blank" class="tag">房东规则</a>
+            <a href="#" target="_blank" class="tag">房客规则</a>
+            <a href="#" target="_blank" class="tag">房源上线标准</a>
+            <a href="#" target="_blank" class="tag">隐私保护</a>
+            <a href="#" target="_blank" class="tag">版权声明</a>
+            <a href="#" target="_blank" class="tag">免责声明</a>
+            <a href="#" target="_blank" class="tag">知识产权声明</a>
+            <a href="#" target="_blank" class="tag">点评发布规则</a>
+        </li>
+        <li class="bigFont online_kf">
+            <span class=""><i class="glyphicon glyphicon-headphones"></i>在线客服</span>
+            <p>客服电话 888 - 888 - 8888</p>
+            <p>客服邮箱 service@jiasu.com</p>
+        </li>
+    </ul>
+    <div class="foot_btm">许可证号：苏ICP证888888号 &nbsp;&nbsp; <a href="//www.anquan.org/s/www.xiaozhu.com" |=""
+                                                            name="mt8SMvYyRDI92b06nuDs8dPFapllCJYidqhM1WlOoGRZ9DWpbo"
+                                                            rel="nofollow" target="_blank">安全联盟</a> &nbsp;&nbsp;
+        苏州三只爬虫信息科技有限公司 &nbsp;&nbsp; <a href="http://www.xiaozhu.com/images/yingye.jpg" |="" name="yingyezhizhao"
+                                       rel="nofollow" target="_blank">营业执照号 888888888</a> <span style="display:none">  &nbsp;&nbsp; 地址：苏州市工业园区创意产业园   &nbsp;&nbsp;电话：888-88888888</span>
+    </div>
+    <div style="width:300px;margin:0 auto;">
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020380"
+           style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img
+                src="../images/govRecord_icon.png" style="float:left;">
+            <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#bdc3c7;">京公网安备
+                88888888888888号</p></a>
+    </div>
+</div>
+<!--foot-end-->
+
+
+<script src="../js/city.js"></script>
+<script src="../js/method1.js"></script>
+<script src="../js/release.js"></script>
+</body>
+</html>

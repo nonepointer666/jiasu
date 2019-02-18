@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width">
+    <meta name="keywords" content="佳宿房源搜索">
+    <meta name="description" content="佳宿房源搜索">
+    <title>发布房源</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/foot.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/release.css">
+
+
+</head>
+<body>
+<!--头部导航栏-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid header_top ">
+        <div class="container w1">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+
+                <a class="navbar-brand m1" href="#"><img src="../images/logo3.png" alt="Brand"></a>
+
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!--<form class="navbar-form navbar-left">-->
+                <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" placeholder="Search">-->
+                <!--</div>-->
+                <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                <!--</form>-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" id="showMode2">登陆</a></li>
+                    <li><a href="#" id="showModel">注册</a></li>
+                    <li><a href="#">我的订单</a></li>
+                    <li><a href="#">短租指南</a></li>
+                    <li><a href="#">
+                        <div class="topinner">发布房源</div>
+                    </a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+<!--头部导航栏end-->
+
+<!--主体部分-->
+<!--进程标识-->
+<div class="top">
+    <div class="top_box">
+        <div class="course_list row">
+            <div class="house_base col-sm-3 col-xs-3 col-md-3 main-color"><span>①</span>房源信息</div>
+            <div class="house_facility col-sm-3 col-xs-3 col-md-3 main-color"><span>②</span>配套设施</div>
+            <div class="house_img col-sm-3 col-xs-3 col-md-3"><span>③</span>真实照片</div>
+            <div class="house_img col-sm-3 col-xs-3 col-md-3"><span>④</span>价格规则</div>
+        </div>
+    </div>
+</div>
+<!--进程标识end-->
+
+<article>
+    <section>
+        <p class="color_tag">配套设施</p>
+        <div></div>
+        <!--配套设施-->
+        <ul class="facility_box">
+            <li>
+                <input type="checkbox" id="hot_water" class="checkboxs"><label for="hot_water" class="checkbox_label">热水</label>
+            </li>
+            <li>
+                <input type="checkbox" id="tooth_brash" class="checkboxs"><label for="tooth_brash" class="checkbox_label">牙刷</label>
+            </li>
+            <li>
+                <input type="checkbox" id="bathtub" class="checkboxs"><label for="bathtub" class="checkbox_label">浴缸</label>
+            </li>
+            <li>
+                <input type="checkbox" id="shampoo" class="checkboxs"><label for="shampoo" class="checkbox_label">沐浴露,洗发水</label>
+            </li>
+            <li>
+                <input type="checkbox" id="wifi" class="checkboxs"><label for="wifi" class="checkbox_label">WIFI</label>
+            </li>
+            <li>
+                <input type="checkbox" id="air_conditioner" class="checkboxs"><label for="air_conditioner" class="checkbox_label">空调</label>
+            </li>
+            <li>
+                <input type="checkbox" id="heating" class="checkboxs"><label for="heating" class="checkbox_label">暖气</label>
+            </li>
+            <li>
+                <input type="checkbox" id="tv" class="checkboxs"><label for="tv" class="checkbox_label">电视</label>
+            </li>
+            <li>
+                <input type="checkbox" id="lock" class="checkboxs"><label for="lock" class="checkbox_label">门禁系统</label>
+            </li>
+            <li>
+                <input type="checkbox" id="kettle" class="checkboxs"><label for="kettle" class="checkbox_label">饮水设备</label>
+            </li>
+            <li>
+                <input type="checkbox" id="elevator" class="checkboxs"><label for="elevator" class="checkbox_label">电梯</label>
+            </li>
+            <li>
+                <input type="checkbox" id="wash_machine" class="checkboxs"><label for="wash_machine" class="checkbox_label">洗衣机</label>
+            </li>
+            <li>
+                <input type="checkbox" id="refrigerator" class="checkboxs"><label for="refrigerator" class="checkbox_label">冰箱</label>
+            </li>
+            <li>
+                <input type="checkbox" id="parking_space" class="checkboxs"><label for="parking_space" class="checkbox_label">停车位</label>
+            </li>
+
+            <li>
+                <input type="checkbox" id="cook" class="checkboxs"><label for="cook" class="checkbox_label">允许做饭</label>
+            </li>
+            <li>
+                <input type="checkbox" id="smoke" class="checkboxs"><label for="smoke" class="checkbox_label">允许吸烟</label>
+            </li>
+            <li>
+                <input type="checkbox" id="pet" class="checkboxs"><label for="pet" class="checkbox_label">允许携带宠物</label>
+            </li>
+            <li>
+                <input type="checkbox" id="child" class="checkboxs"><label for="child" class="checkbox_label">适宜儿童</label>
+            </li>
+            <li>
+                <input type="checkbox" id="old" class="checkboxs"><label for="old" class="checkbox_label">适宜老人</label>
+            </li>
+            <li>
+                <input type="checkbox" id="disability" class="checkboxs"><label for="disability" class="checkbox_label">适宜残疾人</label>
+            </li>
+
+        </ul>
+
+
+    </section>
+
+
+
+
+    <div class="btn_room">保存并继续</div>
+
+
+
+
+</article>
+<!--主体部分end-->
+
+<!--foot-->
+<div class="foot_v2">
+    <ul class="foot_ul">
+        <li><a class="guide" href="http://www.xiaozhu.com/xzweb.php?op=Help_UserGuide&amp;type=tenant" target="_blank">房客指南</a>
+        </li>
+        <li><a class="guide icon_fk" href="http://www.xiaozhu.com/xzweb.php?op=Help_UserGuide&amp;type=landlord"
+               target="_blank">房东指南</a></li>
+        <li>
+            <span class="guide_T">关于我们</span>
+            <a href="#" target="_blank" class="tag">关于佳宿</a>
+            <a href="#" target="_blank" class="tag">加入我们</a>
+            <a href="#" target="_blank" class="tag">联系我们</a>
+        </li>
+        <li>
+            <span class="guide_T">网站帮助</span>
+            <a href="#" target="_blank" class="tag">帮助中心</a>
+            <a href="#" target="_blank" class="tag">网站地图</a>
+        </li>
+        <li class="width_280">
+            <span class="guide_T">网站协议</span><br>
+            <a href="#" target="_blank" class="tag">服务协议</a>
+            <a href="#" target="_blank" class="tag">房东规则</a>
+            <a href="#" target="_blank" class="tag">房客规则</a>
+            <a href="#" target="_blank" class="tag">房源上线标准</a>
+            <a href="#" target="_blank" class="tag">隐私保护</a>
+            <a href="#" target="_blank" class="tag">版权声明</a>
+            <a href="#" target="_blank" class="tag">免责声明</a>
+            <a href="#" target="_blank" class="tag">知识产权声明</a>
+            <a href="#" target="_blank" class="tag">点评发布规则</a>
+        </li>
+        <li class="bigFont online_kf">
+            <span class=""><i class="glyphicon glyphicon-headphones"></i>在线客服</span>
+            <p>客服电话 888 - 888 - 8888</p>
+            <p>客服邮箱 service@jiasu.com</p>
+        </li>
+    </ul>
+    <div class="foot_btm">许可证号：苏ICP证888888号 &nbsp;&nbsp; <a href="//www.anquan.org/s/www.xiaozhu.com" |=""
+                                                            name="mt8SMvYyRDI92b06nuDs8dPFapllCJYidqhM1WlOoGRZ9DWpbo"
+                                                            rel="nofollow" target="_blank">安全联盟</a> &nbsp;&nbsp;
+        苏州三只爬虫信息科技有限公司 &nbsp;&nbsp; <a href="http://www.xiaozhu.com/images/yingye.jpg" |="" name="yingyezhizhao"
+                                       rel="nofollow" target="_blank">营业执照号 888888888</a> <span style="display:none">  &nbsp;&nbsp; 地址：苏州市工业园区创意产业园   &nbsp;&nbsp;电话：888-88888888</span>
+    </div>
+    <div style="width:300px;margin:0 auto;">
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020380"
+           style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img
+                src="../images/govRecord_icon.png" style="float:left;">
+            <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#bdc3c7;">京公网安备
+                88888888888888号</p></a>
+    </div>
+</div>
+<!--foot-end-->
+
+
+<script src="../js/release2.js"></script>
+</body>
+</html>
