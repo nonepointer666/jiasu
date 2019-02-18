@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width">
+    <meta name="keywords" content="佳宿房源搜索">
+    <meta name="description" content="佳宿房源搜索">
+    <title>佳宿房源搜索</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/foot.css">
+    <link rel="stylesheet" href="http://minsustatic.ziroom.com/portal/css/common.css?v=js.version.20171116">
+    <link rel="stylesheet" type="text/css" href="http://minsustatic.ziroom.com/portal/css/list.css">
+    <link rel="stylesheet" href="../css/search.css">
+    <link rel="stylesheet" href="../css/common.css">
+
+
+
+</head>
+<body>
+<!--头部-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid header_top ">
+        <div class="container w1">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand m1" href="#"><img src="../images/logo3.png" alt="Brand"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!--<form class="navbar-form navbar-left">-->
+                <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" placeholder="Search">-->
+                <!--</div>-->
+                <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                <!--</form>-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" id="showMode2">登陆</a></li>
+                    <li><a href="#" id="showModel">注册</a></li>
+                    <li><a href="#">我的订单</a></li>
+                    <li><a href="#">短租指南</a></li>
+                    <li><a href="#">
+                        <div class="topinner">发布房源</div>
+                    </a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+<!--头部end-->
+<div class="main_search">
+    <div class="area">
+        <div id="searchBar" class="search_bar clearfix">
+            <div class="search_bar_l">
+                <ul class="search_bar_l_ul" id="start_input">
+                    <!--请选择城市-->
+                    <li class="city_li ">
+                        <div class="ipt_box">
+                            <input id="cityIpt" class="city_ipt ipt" type="text"
+                                   placeholder="请选择城市" readonly="readonly" data-citycode="120000">
+                            <i class="icons icon_city"></i>
+                        </div>
+                        <ul id="cityList" class="select_list city_list">
+                        </ul>
+                    </li>
+                    <!--入住日期-->
+                    <li class="start_date_li">
+                        <input id="start" class="date_ipt" type="text" placeholder="入住日期" readonly="readonly"
+                               value="2019-01-31">
+                        <i class="icons icon_date"></i>
+                    </li>
+                    <li class="end_date_li">
+                        <input id="end" class="date_ipt" type="text" placeholder="离开日期" readonly="readonly"
+                               value="2019-02-14">
+                        <i class="icons icon_date"></i>
+                    </li>
+                    <!--入住人数-->
+                    <li class="person_num_li ipt_li">
+                        <div class="ipt_box">
+                            <input id="personNumIpt" class="person_num_ipt ipt" type="text" placeholder="入住人数"
+                                   readonly="readonly" data-person="">
+                            <i class="icons icon_person"></i>
+                        </div>
+                        <ul class="select_list person_list">
+                            <li data-person="1">1人</li>
+                            <li data-person="2">2人</li>
+                            <li data-person="3">3人</li>
+                            <li data-person="4">4人</li>
+                            <li data-person="5">5人</li>
+                            <li data-person="6">6人</li>
+                            <li data-person="7">7人</li>
+                            <li data-person="8">8人</li>
+                            <li data-person="9">9人</li>
+                            <li data-person="10">10人＋</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="search_bar_r">
+                <input id="search_btn" class="search_btn" type="button" value="开始搜索">
+            </div>
+        </div>
+        <div id="searchList" class="search_list">
+            <table class="search_tab">
+                <!--出租方式-->
+                <tr class="rent_style">
+                    <td class="td_t">出租方式</td>
+                    <td data-type="rent" class="td_c td_md ">
+                        <div class="tags" data-rent="-1">不限</div>
+                    </td>
+                    <td data-type="rent" class="td_c td_md active">
+                        <div class="tags" data-rent="0">整套出租</div>
+                    </td>
+                    <td data-type="rent" class="td_c td_md ">
+                        <div class="tags" data-rent="1">独立单间</div>
+                    </td>
+                    <td data-type="rent" class="td_c td_md ">
+                        <div class="tags" data-rent="2">合住房间</div>
+                    </td>
+                </tr>
+                <!--预订类型-->
+                <!--<tr>-->
+                    <!--<td class="td_t">预订类型-->
+                    <!--</td>-->
+                    <!--<td data-type="preview" class="td_c td_md active ">-->
+                        <!--<div class="tags" data-preview="-1">不限</div>-->
+                    <!--</td>-->
+                    <!--<td data-type="preview" class="td_c td_md ">-->
+                        <!--<div class="tags" data-preview="1">立即预订</div>-->
+                    <!--</td>-->
+                    <!--<td data-type="preview" class="td_c td_md ">-->
+                        <!--<div class="tags" data-preview="2">申请预订</div>-->
+                    <!--</td>-->
+                    <!--<td>&nbsp;</td>-->
+                <!--</tr>-->
+                <!--价格范围-->
+                <tr class="lg">
+                    <td class="td_t">价格范围</td>
+                    <td colspan="4">
+                        <input id="price" type="hidden"
+                               class="single-slider" value="0,1500"/>
+                    </td>
+                </tr>
+                <!--关键词-->
+                <tr>
+                    <td class="td_t">关键词</td>
+                    <td colspan="4">
+                        <div class="keyword_box">
+                            <input id="keywordIpt" class="keyword_ipt" maxlength="15"
+                                   onkeyup="showKeywordBtn()" type="text"
+                                   placeholder="请输入商圈、景点、房间名等" value="">
+                            <div class="keyword_btn" id="keywordBtn"></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="main_tab">
+    <div class="area">
+        <div id="requireBox" class="require_box clearfix">
+            <div class="l clearfix">
+                <span class="t"></span>
+                <ul id="requireList" class="require_list clearfix">
+                    <input type="hidden" id="address" value="苏州">
+                    <input type="hidden" id="start_time" value="">
+                    <input type="hidden" id="end_time" value="">
+                    <input type="hidden" id="number_of_people" value="2">
+                    <input type="hidden" id="rent_style" value="-1">
+                    <input type="hidden" id="preview" value="-1">
+                    <input type="hidden" id="startPrice" value="0">
+                    <input type="hidden" id="endPrice" value="10000">
+                    <input type="hidden" id="lastPrice" value="">
+                    <input type="hidden" id="key_word" value="">
+                </ul>
+            </div>
+            <div class="r">
+                <div class="up_btn down" onclick="upRequirebox(this)">收起筛选条件</div>
+            </div>
+        </div>
+
+        <div class="house_list">
+            <div class="house_item clearfix">
+                <a href="/rooms/1/8a90997763492cba01634f39be2f10b0" class="disblock clearfix" target="_blank">
+                <div class="l clearfix">
+                    <div class="img"><img
+                            src="https://img.ziroom.com/minsu/g2/M00/C0/1C/ChAFD1r1kIaAXw7rAAMSRDxzcfw925.jpg_Z_720_480.jpg">
+                    </div>
+                    <div class="txt"><h1>近石家庄学院 东二环东明家具城旁花溪畔主卧</h1>
+                        <h3></h3>
+                        <div class="star_box clearfix"><span>独立房间</span><span>/可住</span><span>2</span><span>人</span>
+                            <ul class="stars clearfix" data-val="5">
+                                <li class="star active"></li>
+                                <li class="star active"></li>
+                                <li class="star active"></li>
+                                <li class="star active"></li>
+                                <li class="star active"></li>
+                            </ul>
+                            <span class="score">5分</span></div>
+                        <div class="price_box"><span>¥</span><span class="price">100</span><span>/晚</span></div>
+                        <ul class="tag_list">
+                            <li>2居</li>
+                            <li>1张床</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="r">
+                    <dt class="headimg"><img
+                            src="https://img.ziroom.com/minsu/g2/M00/8E/02/ChAFD1nu1zKAaQKNAABjBgDghQ8379.jpg_Z_120_120.jpg">
+                    </dt>
+                    <dd>房东</dd>
+                    <dd class="name_dd">青年E家人</dd>
+                </div>
+            </a></div>
+
+            <div class="house_item clearfix">
+                <a href="/rooms/1/8a90997763492cba01634f39be2f10b0" class="disblock clearfix" target="_blank">
+                <div class="l clearfix">
+                    <div class="img"><img src="../images/21.jpg">
+                    </div>
+                    <div class="txt"><h1>近石家庄学院 东二环东明家具城旁花溪畔主卧</h1>
+                        <h3></h3>
+                        <div class="star_box clearfix"><span>独立房间/可住2人</span>
+                            <ul class="stars clearfix" data-val="5">
+                                <li class="star active"></li>
+                                <li class="star active"></li>
+                                <li class="star active"></li>
+                                <li class="star active"></li>
+                                <li class="star active"></li>
+                            </ul>
+                            <span class="score">5分</span></div>
+                        <div class="price_box"><span>¥</span><span class="price">100</span><span>/晚</span></div>
+                        <ul class="tag_list">
+                            <li>2居</li>
+                            <li>1双人床</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="r">
+                    <dt class="headimg"><img
+                            src="https://img.ziroom.com/minsu/g2/M00/8E/02/ChAFD1nu1zKAaQKNAABjBgDghQ8379.jpg_Z_120_120.jpg">
+                    </dt>
+                    <dd>房东</dd>
+                    <dd class="name_dd">青年E家人</dd>
+                </div>
+            </a></div>
+        </div>
+        <!--分页-->
+        <ul class="page_box">
+            <li class="pages">1<>
+            <li class="pages">2<>
+            <li class="pages">3<>
+            <li class="pages">4<>
+            <li class="pages">5<>
+            <li class="pages">6<>
+
+        </ul>
+
+        <div id="loadMore"></div>
+    </div>
+</div>
+
+
+<!--主体部分end-->
+<!--foot-->
+
+<div class="foot_v2">
+    <ul class="foot_ul">
+        <li><a class="guide" href="http://www.xiaozhu.com/xzweb.php?op=Help_UserGuide&amp;type=tenant" target="_blank">房客指南</a>
+        </li>
+        <li><a class="guide icon_fk" href="http://www.xiaozhu.com/xzweb.php?op=Help_UserGuide&amp;type=landlord"
+               target="_blank">房东指南</a></li>
+        <li>
+            <span class="guide_T">关于我们</span>
+            <a href="#" target="_blank" class="tag">关于佳宿</a>
+            <a href="#" target="_blank" class="tag">加入我们</a>
+            <a href="#" target="_blank" class="tag">联系我们</a>
+        </li>
+        <li>
+            <span class="guide_T">网站帮助</span>
+            <a href="#" target="_blank" class="tag">帮助中心</a>
+            <a href="#" target="_blank" class="tag">网站地图</a>
+        </li>
+        <li class="width_280">
+            <span class="guide_T">网站协议</span><br>
+            <a href="#" target="_blank" class="tag">服务协议</a>
+            <a href="#" target="_blank" class="tag">房东规则</a>
+            <a href="#" target="_blank" class="tag">房客规则</a>
+            <a href="#" target="_blank" class="tag">房源上线标准</a>
+            <a href="#" target="_blank" class="tag">隐私保护</a>
+            <a href="#" target="_blank" class="tag">版权声明</a>
+            <a href="#" target="_blank" class="tag">免责声明</a>
+            <a href="#" target="_blank" class="tag">知识产权声明</a>
+            <a href="#" target="_blank" class="tag">点评发布规则</a>
+        </li>
+        <li class="bigFont online_kf">
+            <span class=""><i class="glyphicon glyphicon-headphones"></i>在线客服</span>
+            <p>客服电话 400 - 010 - 7890</p>
+            <p>客服邮箱 service@jiasu.com</p>
+        </li>
+    </ul>
+    <div class="foot_btm">许可证号：苏ICP证140510号 &nbsp;&nbsp; <a href="//www.anquan.org/s/www.xiaozhu.com" |=""
+                                                            name="mt8SMvYyRDI92b06nuDs8dPFapllCJYidqhM1WlOoGRZ9DWpbo"
+                                                            rel="nofollow" target="_blank">安全联盟</a> &nbsp;&nbsp;
+        苏州三只爬虫信息科技有限公司 &nbsp;&nbsp; <a href="http://www.xiaozhu.com/images/yingye.jpg" |="" name="yingyezhizhao"
+                                       rel="nofollow" target="_blank">营业执照号 103613118</a> <span style="display:none">  &nbsp;&nbsp; 地址：北京市海淀区知春路56号   &nbsp;&nbsp;电话：010-62961978</span>
+    </div>
+    <div style="width:300px;margin:0 auto;">
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020380"
+           style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img
+                src="../images/govRecord_icon.png" style="float:left;">
+            <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#bdc3c7;">京公网安备
+                11010802020380号</p></a>
+    </div>
+</div>
+<!--foot-end-->
+
+<script src="../js/utils.js"></script>
+<script src="../js/search.js"></script>
+<!-- 全局js -->
+<script src="../js/jq.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/range.js"></script>
+<script src="../js/getYear.js"></script>
+<script src="../js/searchJH.js"></script>
+
+</body>
+</html>

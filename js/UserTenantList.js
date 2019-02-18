@@ -121,7 +121,7 @@
                     <div class="basic_info_body sm-font">
                         <ul>
                             <li class="sm-font">
-                                <label class="tag">性别：</label><span ><input name="sex" type="radio" checked="checked"/>男<input name="sex" type="radio" />女</span><span class="info" id="sex">${data_all.sex}</span>
+                                <label class="tag">性别：</label><span class="info" id="sex">${data_all.sex}</span>
                             </li>
 
                             <li class="sm-font">
@@ -210,26 +210,45 @@
             // 社交信息修改
             var edit=$("#edit");
             var sex=$("#sex");
-            var id_card=$("#id_card");
-            validate.onclick=function () {
-                if (validate.innerText=="验证") {
-                    name.innerHTML=`<input type="text" class="info_input" spellcheck="false" id="name_input">`
-                    id_card.innerHTML=`<input type="text" class="info_input" spellcheck="false" id="id_card_input">`
-                    validate.innerText="保存"
-                    var name_input=$("#name_input")
-                    var id_card_input=$("#id_card_input")
+            var education=$("#education");
+            var work=$("#work");
+            var birthday=$("#birthday");
+            var region=$("#region");
+            edit.onclick=function () {
+                if (edit.innerText=="编辑") {
+                    sex.innerHTML=`<input type="text" class="info_input" spellcheck="false" id="sex_input">`;
+                    education.innerHTML=`<input type="text" class="info_input" spellcheck="false" id="education_input">`;
+                    work.innerHTML=`<input type="text" class="info_input" spellcheck="false" id="work_input">`;
+                    birthday.innerHTML=`<input type="text" class="info_input" spellcheck="false" id="birthday_input">`;
+                    region.innerHTML=`<input type="text" class="info_input" spellcheck="false" id="region_input">`;
+                    var sex_input=$("#sex_input")
+                    var education_input=$("#education_input")
+                    var work_input=$("#work_input")
+                    var birthday_input=$("#birthday_input")
+                    var region_input=$("#region_input")
+                    edit.innerText="保存"
                 }
-                else if (validate.innerText=="保存") {
-                    var pro_name=name_input.value;
-                    var pro_id_card=id_card_input.value;
+                else if (edit.innerText=="保存") {
+                    var pro_sex=sex_input.value;
+                    var pro_education=education_input.value;
+                    var pro_work=work_input.value;
+                    var pro_birthday=birthday_input.value;
+                    var pro_region=region_input.value;
                     // 修改信息
-                    let url_realInfo="http://127.0.0.1:8080/user/data/realInfo"
+                    let url_socialInfo="http://127.0.0.1:8080/user/data/socialInfo";
 
-                    data["name"]=pro_name;
-                    data["id_card"]=pro_id_card;
-                    postData(url_realInfo,data,function (res) {
-                        name.innerHTML=pro_name;
-                        id_card.innerHTML=pro_id_card;
+                    data["sex"]=pro_sex;
+                    data["education"]=pro_education;
+                    data["work"]=pro_work;
+                    data["birthday"]=pro_birthday;
+                    data["region"]=pro_region;
+                    postData(url_socialInfo,data,function (res)
+                    {
+                        sex.innerHTML=pro_sex;
+                        education.innerHTML=pro_education;
+                        work.innerHTML=pro_work;
+                        birthday.innerHTML=pro_birthday;
+                        region.innerHTML=pro_region;
                     })
 
                 }
@@ -250,14 +269,14 @@
                     var pro_name=name_input.value;
                     var pro_id_card=id_card_input.value;
                     // 修改信息
-                    let url_realInfo="http://127.0.0.1:8080/user/data/realInfo"
+                    let url_realInfo="http://127.0.0\n" +
+                        "                    data[\"id_card\"]=pro_id_card;\n" +
+                        "                    postData(url_realInfo,data,function (res) {\n" +
+                        "                        name.innerHTML=pro_name;\n" +
+                        "                        id_card.innerHTML=pro_id_card;\n" +
+                        "                    }).1:8080/user/data/realInfo"
 
                     data["name"]=pro_name;
-                    data["id_card"]=pro_id_card;
-                    postData(url_realInfo,data,function (res) {
-                        name.innerHTML=pro_name;
-                        id_card.innerHTML=pro_id_card;
-                    })
 
                 }
             }
@@ -271,7 +290,7 @@
     localStorage.setItem('id', 1);
     if (localStorage.getItem('id')) {
         // 声明个人所有数据的集合
-        data_all()
+        // data_all()
     }
     // else {
     //     alert("请先登录")
@@ -399,6 +418,4 @@
     user_data.onclick = function () {
         data_all()
     }
-
-
 })();

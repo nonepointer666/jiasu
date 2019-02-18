@@ -1,0 +1,32 @@
+.keyword_ipt{
+    width: 200px!important;
+}
+.search_bar_l,.search_btn{
+    position: relative;
+    top: -10px;
+    height: 50px!important;
+}
+.house_item{
+    padding: 0;
+}
+.page_box{
+    width: 400px;
+    margin: auto;
+}
+.pages{
+    width: 20px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+    border: 1px solid rgba(128, 128, 128, 0.49);
+    border-radius: 2px;
+    float: left;
+    margin-left:30px ;
+
+}
+.page_active{
+    background-color: var(--main-color);
+    color: white;
+    cursor: pointer;
+    border:none;
+}
