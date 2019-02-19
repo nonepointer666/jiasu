@@ -27,7 +27,7 @@ p{
     height: 600px;
     max-height: 500px;
     margin: 100px auto;
-    border-radius:10px;
+    border-radius:1px;
     background-color:#fff;
     -webkit-animation: zoom 0.3s;
     animation: zoom 0.3s;
@@ -49,10 +49,9 @@ p{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(50, 198, 190, 0.7);
 }
 .close{
-    color: black;
+    color: #81d3c8;
     font-size: 40px;
     font-weight: bold;
     margin-right: -240px;
@@ -65,12 +64,11 @@ p{
     cursor: pointer;
 }
 .close1{
-    color: #b7b7b7;
+    color: #81d3c8;
     font-size: 40px;
     font-weight: bold;
-
-    transition: all 0.1s;
     margin-right: -240px;
+    transition: all 0.1s;
 }
 .close1:hover, .close1:focus{
     color: #95b4ed;
@@ -89,7 +87,7 @@ p{
     padding: 15px;
     justify-content: flex-end;
     align-items: center;
-    background-color: rgba(47, 187, 179, 0.7);
+
 }
 .modal-footer button{
     width: 60px;
@@ -127,7 +125,7 @@ p{
 .btn-regist{
     width: 200px;
     height: 40px;
-    background-color: #E33555;
+    background-color: #6dbbb0;
     outline: none;
     border: 1px solid gainsboro;
     color: white;
@@ -156,6 +154,8 @@ table input{
     margin-left: 110px;
 }
 .modal-header h4{
-    color: white;
+    color: #82d7cc;
+
 }
+
 
