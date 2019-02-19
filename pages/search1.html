@@ -165,11 +165,11 @@
             <div class="l clearfix">
                 <span class="t"></span>
                 <ul id="requireList" class="require_list clearfix">
-                    <input type="hidden" id="address" value="苏州">
+                    <input type="hidden" id="address" value="">
                     <input type="hidden" id="start_time" value="">
                     <input type="hidden" id="end_time" value="">
                     <input type="hidden" id="number_of_people" value="2">
-                    <input type="hidden" id="rent_style" value="-1">
+                    <input type="hidden" id="rent_style" value="0">
                     <input type="hidden" id="preview" value="-1">
                     <input type="hidden" id="startPrice" value="0">
                     <input type="hidden" id="endPrice" value="10000">
@@ -184,7 +184,7 @@
 
         <div class="house_list">
             <div class="house_item clearfix">
-                <a href="/rooms/1/8a90997763492cba01634f39be2f10b0" class="disblock clearfix" target="_blank">
+                <a class="disblock clearfix" target="_blank">
                 <div class="l clearfix">
                     <div class="img"><img
                             src="https://img.ziroom.com/minsu/g2/M00/C0/1C/ChAFD1r1kIaAXw7rAAMSRDxzcfw925.jpg_Z_720_480.jpg">
@@ -217,7 +217,7 @@
             </a></div>
 
             <div class="house_item clearfix">
-                <a href="/rooms/1/8a90997763492cba01634f39be2f10b0" class="disblock clearfix" target="_blank">
+                <a class="disblock clearfix" target="_blank">
                 <div class="l clearfix">
                     <div class="img"><img src="../images/21.jpg">
                     </div>
@@ -250,13 +250,13 @@
         </div>
         <!--分页-->
         <ul class="page_box">
-            <li class="pages">1<>
-            <li class="pages">2<>
-            <li class="pages">3<>
-            <li class="pages">4<>
-            <li class="pages">5<>
-            <li class="pages">6<>
-
+            <li class="page_boxs" id="index_page">首页</li>
+            <li class="page_boxs" id="previous">上一页</li>
+            <li class="pages">1</li>
+            <li class="pages">2</li>
+            <li class="pages">3</li>
+            <li class="page_boxs" id="next">下一页</li>
+            <li class="page_boxs" id="last_page">尾页</li>
         </ul>
 
         <div id="loadMore"></div>

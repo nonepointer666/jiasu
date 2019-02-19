@@ -89,20 +89,20 @@
             "email":"0"
         };
         postData(url, data, function (res) {
-            data_all = res
+            data_all = res;
             content.innerHTML = `<div class="basic_info">
                     <div class="basic_info_head">
                         <span class="sm-font main-color">基本信息</span>
                     </div>
                     <div class="basic_info_body sm-font row">
                         <ul class="col-xs-9 col-sm-9 col-md-9" id="info_basic">
-                            <li class="sm-font">
+                            <li class="font">
                                 <label class="tag">用户名：</label><span class="info">${data_all.nick_name}</span><span class="info main-color pointer" id="nick_name">修改</span>
                             </li>
-                            <li class="sm-font">
+                            <li class="font">
                                 <label class="tag">手机号码：</label><span  class="info">${data_all.tel}</span><span class="info main-color pointer" id="tel">修改</span>
                             </li>
-                            <li class="sm-font">
+                            <li class="font">
                             <label class="tag">Email</label><span class="tag">：</span><span class="info">${data_all.email}</span><span class="info main-color pointer" id="email">修改</span>
                             </li>
                             <div class="error" id="email_error"></div>
@@ -120,20 +120,20 @@
                     </div>
                     <div class="basic_info_body sm-font">
                         <ul>
-                            <li class="sm-font">
+                            <li class="font">
                                 <label class="tag">性别：</label><span class="info" id="sex">${data_all.sex}</span>
                             </li>
 
-                            <li class="sm-font">
+                            <li class="font">
                                 <label class="tag">教育：</label><span class="info" id="education">${data_all.education}</span>
                             </li>
-                            <li class="sm-font">
+                            <li class="font">
                                 <label class="tag">工作：</label><span  class="info" id="work">${data_all.work}</span>
                             </li>
-                            <li class="sm-font">
+                            <li class="font">
                                 <label class="tag">出生日期：</label><span class="info" id="birthday">${data_all.birthday}</span>
                             </li>
-                            <li class="sm-font">
+                            <li class="font">
                                 <label class="tag">所在地区：</label><span  class="info" id="region">${data_all.region}</span>
                             </li>
                         </ul>
@@ -146,11 +146,11 @@
                     </div>
                     <div class="basic_info_body sm-font">
                         <ul>
-                            <li class="sm-font">
+                            <li class="font">
                                 <label class="tag">真实姓名：</label><span class="info" id="name">未填写</span>
                             </li>
                             <div class="error" id="name_error"></div>
-                            <li class="sm-font">
+                            <li class="font">
                                 <label class="tag">身份证：</label><span  class="info" id="id_card">未填写</span>
                             </li>
                             <div class="error" id="id_card_error"></div>
@@ -290,7 +290,7 @@
     localStorage.setItem('id', 1);
     if (localStorage.getItem('id')) {
         // 声明个人所有数据的集合
-        // data_all()
+        data_all()
     }
     // else {
     //     alert("请先登录")

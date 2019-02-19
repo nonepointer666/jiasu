@@ -34,7 +34,9 @@ big-font{
 .xs-w{
     font-weight: 700;
 }
-
+.font{
+    font-size: 0.9em;
+}
 .min-font{
     font-size: 0.8em!important;
 }
