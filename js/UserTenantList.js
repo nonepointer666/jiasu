@@ -290,7 +290,7 @@
     localStorage.setItem('id', 1);
     if (localStorage.getItem('id')) {
         // 声明个人所有数据的集合
-        data_all()
+        // data_all()
     }
     // else {
     //     alert("请先登录")

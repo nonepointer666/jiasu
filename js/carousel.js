@@ -12,7 +12,7 @@
         inter = setInterval(function () {
             index++;
             index = index % 4;
-            imgs.src = 'images/' + all_imgs[index];
+            imgs.src = '../images/' + all_imgs[index];
             // tu.innerHTML='';
             // tu.innerHTML=`<img src="images/${all_imgs[index]}" alt="..." id="imgs01">`
         }, 3000);
@@ -41,7 +41,7 @@
 
         // tu.innerHTML='';
         // tu.innerHTML=`<img src="images/${all_imgs[index]}" alt="..." id="imgs01">
-        imgs.src = '../images/' + all_imgs[index];
+        imgs.src = '../../images/' + all_imgs[index];
         createInteral();
 
     }

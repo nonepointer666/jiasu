@@ -3,9 +3,6 @@ var s=document.querySelector('#aaaa');
     s.onmouseover=function (e) {
         if (e.target.nodeName=="IMG") {
             // alert(e.target.parentNode.lastElementChild.className)
-
-
-
             for(let b of s.children){
                 // alert(b.firstElementChild.lastElementChild.className)
                 if(b.firstElementChild.lastElementChild.className=="q4"){
@@ -18,9 +15,9 @@ var s=document.querySelector('#aaaa');
                     b.firstElementChild.lastElementChild.previousElementSibling.previousElementSibling.style.color = "white";
                 }
             }
-            e.target.parentNode.lastElementChild.style.display = "block";
-            e.target.nextElementSibling.nextElementSibling.style.color = "black";
-            e.target.nextElementSibling.style.color = "black";
+            e.target.parentNode.parentNode.lastElementChild.style.display = "block";
+            e.target.parentNode.nextElementSibling.nextElementSibling.style.color = "black";
+            e.target.parentNode.nextElementSibling.style.color = "black";
 
 
         }
