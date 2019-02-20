@@ -17,7 +17,7 @@
     width: 30px;
     height: 20px;
     text-align: center;
-    line-height: 20px;
+    line-height:18px;
     /*border: 1px solid rgba(128, 128, 128, 0.49);*/
     border-radius: 2px;
     float: left;
@@ -26,28 +26,28 @@
 }
 
 .page_active{
-    background-color: var(--main-color);
-    color: white;
-    cursor: pointer;
-    border:none;
+    background-color:var(--main-color);
+    color: white!important;
+    border: none;
 }
 
 .page_box li{
     float: left;
     margin: 10px;
     cursor: pointer;
-    background-color: var(--main-color);
-    color: white;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
 }
 .page_box li:hover{
-    background-color: #31859b;
+    background-color: var(--main-color);
+    color: white;
 }
 
 .page_boxs{
     width: 60px;
     height: 20px;
     text-align: center;
-    line-height: 20px;
+    line-height: 18px;
     /*border: 1px solid rgba(128, 128, 128, 0.49);*/
     border-radius: 2px;
     float: left;
