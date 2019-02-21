@@ -36,9 +36,19 @@
     var my_order = $("#my_order");
     my_order.onclick = function () {
         if (token) {
-            location.href = "../pages/UserTenantList.html";
-        } else {
-            sessionStorage.setItem('from', '../pages/UserTenantList.html');
+            getData('http://127.0.0.1:8080/user/list',null,{"token":token},function (res) {
+                if (res && res.status_code=='10003'){
+                    location.href = "../pages/UserTenantList.html";
+                }else if (res && res.status_code=='10006') {
+                    sessionStorage.setItem('from', '../pages/UserTenantList.html');
+                    modaldeng.style.display = "block";
+                }else if (res && res.status_code=='10007') {
+                    sessionStorage.setItem('from', '../pages/UserTenantList.html');
+                    modaldeng.style.display = "block";
+                }
+            })
+        }else {
+            sessionStorage.setItem('from', '../pages/release.html');
             modaldeng.style.display = "block";
         }
     };
@@ -47,13 +57,24 @@
     for (var i of my_pubish) {
     i.onclick = function () {
         if (token) {
-            location.href = "../pages/release.html";
-        } else {
+            getData('http://127.0.0.1:8080/user/list',null,{"token":token},function (res) {
+                if (res && res.status_code=='10003'){
+                    location.href = "../pages/release.html";
+                }else if (res && res.status_code=='10006') {
+                    sessionStorage.setItem('from', '../pages/release.html');
+                    modaldeng.style.display = "block";
+                }else if (res && res.status_code=='10007') {
+                    sessionStorage.setItem('from', '../pages/release.html');
+                    modaldeng.style.display = "block";
+                }
+            })
+        }else {
             sessionStorage.setItem('from', '../pages/release.html');
             modaldeng.style.display = "block";
         }
         }
-    };
+
+    }
 // 弹出头像下拉列表
     var head_img=$("#head_image");
     var liebiao=$("#liebiao");
@@ -66,7 +87,23 @@
     };
     // 跳转个人中心
     zhongxin.onclick=function(){
-        location.href = "../pages/UserTenantList.html";
+        if (token) {
+            getData('http://127.0.0.1:8080/user/list',null,{"token":token},function (res) {
+                if (res && res.status_code=='10003'){
+                    location.href = "../pages/UserTenantList.html";
+                }else if (res && res.status_code=='10006') {
+                    sessionStorage.setItem('from', '../pages/UserTenantList.html');
+                    modaldeng.style.display = "block";
+                }else if (res && res.status_code=='10007') {
+                    sessionStorage.setItem('from', '../pages/UserTenantList.html');
+                    modaldeng.style.display = "block";
+                }
+            })
+        }else {
+            sessionStorage.setItem('from', '../pages/release.html');
+            modaldeng.style.display = "block";
+        }
+
     };
     // 弹出注册模态框
     btn.onclick = function () {

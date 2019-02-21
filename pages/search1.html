@@ -14,7 +14,10 @@
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/model.css">
     <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/search2.css">
+    <link rel="stylesheet" href="../css/sheng.css">
+    <link rel="stylesheet" href="http://minsustatic.ziroom.com/portal/css/common.css?v=js.version.20171116">
+    <link rel="stylesheet" type="text/css" href="http://minsustatic.ziroom.com/portal/css/list.css">
+
 
 
 </head>
@@ -27,7 +30,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
 
-                <a class="navbar-brand m1" href="../homepage.html"><img src="../images/logo3.png" alt="Brand"></a>
+                <a class="navbar-brand m1" href="homepage.html"><img src="../images/logo3.png" alt="Brand"></a>
 
 
             </div>
@@ -197,14 +200,30 @@
                 <ul class="search_bar_l_ul" id="start_input">
                     <!--请选择城市-->
                     <li class="city_li ">
-                        <div class="ipt_box">
-                            <input id="cityIpt" class="city_ipt ipt" type="text"
+                        <div class="ipt_box o1">
+                            <input  id = "addr-show02" class="gai " type="text"
                                    placeholder="请选择城市" readonly="readonly" data-citycode="120000">
                             <i class="icons icon_city"></i>
                         </div>
-                        <ul id="cityList" class="select_list city_list">
-                        </ul>
+                        <div  class="sheng1">
+                            <fieldset >
+                                <div  id = "addr-choice" >
+                                    <ul  id = "title-wrap" >
+                                        <li  value = "0" >省份</li >
+                                        <li  value = "1" >城市</li >
+                                        <li  value = "2" >县区</li >
+                                    </ul >
+                                    <div  id = "show-panel" >
+                                        <ul  id = "addr-wrap" >
+                                        </ul >
+                                    </div >
+                                </div >
+                                <button  type = "button" id="c1" class = "btn met2" >确定</button >
+                            </fieldset >
+                        </div >
                     </li>
+                    <!-------------------------------省市三级----------------------------------->
+
                     <!--入住日期-->
                     <li class="start_date_li">
                         <input id="start" class="date_ipt" type="text" placeholder="入住日期" readonly="readonly"
@@ -462,6 +481,9 @@
 <script src="../js/header.js"></script>
 <script src="../js/utils.js"></script>
 <script src="../js/search.js"></script>
+<script src="../js/city.js"></script>
+<script src="../js/city02.js"></script>
+<script src="../js/method2.js"></script>
 <!-- 全局js -->
 <script src="../js/jq.js"></script>
 <script src="../js/common.js"></script>

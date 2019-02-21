@@ -5,7 +5,7 @@
     var city=document.querySelector('#addr-show02');
     var tishi=document.querySelector('#citytishi');
     function bijiao() {
-       if (ru.value && likai.value){
+       if (ru.value && likai.value && checkcity()){
            if (ru.value < likai.value) {
                location.href="pages/search1.html"
            }
