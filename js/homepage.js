@@ -4,32 +4,32 @@ var $=function (e) {
 };
 var minju=$("#min");
 minju.onclick=function () {
-    sessionStorage.setItem("key_word",minju.children[1].innerText)
+    sessionStorage.setItem("house_style",minju.children[1].innerText)
     location.href="../pages/search1.html"
 };
 var yangfang=$("#yangfang");
 yangfang.onclick=function () {
-    sessionStorage.setItem("key_word",yangfang.children[1].innerText)
+    sessionStorage.setItem("house_style",yangfang.children[1].innerText)
     location.href="../pages/search1.html"
 };
 var haijing=$("#haijing");
 haijing.onclick=function () {
-    sessionStorage.setItem("key_word",haijing.children[1].innerText)
+    sessionStorage.setItem("house_style",haijing.children[1].innerText)
     location.href="../pages/search1.html"
 };
 var kezhan=$("#kezhan");
     kezhan.onclick=function () {
-    sessionStorage.setItem("key_word",kezhan.children[1].innerText);
+    sessionStorage.setItem("house_style",kezhan.children[1].innerText);
     location.href="../pages/search1.html"
 };
 var biesu=$("#biesu");
     biesu.onclick=function () {
-    sessionStorage.setItem("key_word",biesu.children[1].innerText)
+    sessionStorage.setItem("house_style",biesu.children[1].innerText)
         location.href="../pages/search1.html"
 };
 var gongyu=$("#gongyu");
     gongyu.onclick=function () {
-    sessionStorage.setItem("key_word",gongyu.children[1].innerText);
+    sessionStorage.setItem("house_style",gongyu.children[1].innerText);
         location.href="../pages/search1.html"
 };
 var qinzi=$("#qinzi");
@@ -64,22 +64,22 @@ tianju.onclick=function () {
 };
 var beijing=$("#beijing");
     beijing.onclick=function () {
-    sessionStorage.setItem("key_word",beijing.children[1].innerText)
+    sessionStorage.setItem("address",beijing.children[1].innerText)
         location.href="../pages/search1.html"
 };
 var shanghai=$("#shanghai");
     shanghai.onclick=function () {
-    sessionStorage.setItem("key_word",shanghai.children[1].innerText)
+    sessionStorage.setItem("address",shanghai.children[1].innerText)
         location.href="../pages/search1.html"
 };
 var chengdu=$("#chengdu");
     chengdu.onclick=function () {
-    sessionStorage.setItem("key_word",chengdu.children[1].innerText)
+    sessionStorage.setItem("address",chengdu.children[1].innerText)
         location.href="../pages/search1.html"
 };
 var lasa=$("#lasa");
     lasa.onclick=function () {
-    sessionStorage.setItem("key_word",lasa.children[1].innerText)
+    sessionStorage.setItem("address",lasa.children[1].innerText)
         location.href="../pages/search1.html"
 };
 })();

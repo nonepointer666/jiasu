@@ -13,60 +13,14 @@
     var $ = function (e) {
         return document.querySelector(e)
     };
-
-    // 根据令牌变换头部
-    var you=$('#you');
-    var meiyou=$('#meiyou');
-    if (token) {
-        you.style.display='block';
-        meiyou.style.display='None';
-    } else {
-        meiyou.style.display='block';
-        you.style.display='None';
-    }
-
-    // 退出
-    var tuichu=$('.liebiao2');
-    tuichu.onclick=function () {
-        localStorage.removeItem('token');
-        // location.replace(location);
-        parent.location.reload();
-    };
-    // 个人中心触发事件
     var my_order = $("#my_order");
     my_order.onclick = function () {
         if (token) {
-            location.href = "../pages/UserTenantList.html";
+            location.href = "dingdan.html";
         } else {
-            sessionStorage.setItem('from', '../pages/UserTenantList.html');
+            sessionStorage.setItem('from', 'dingdan.html');
             modaldeng.style.display = "block";
         }
-    };
-    // 发布房间触发事件
-    var my_pubish=document.querySelectorAll(".my_publish");
-    for (var i of my_pubish) {
-    i.onclick = function () {
-        if (token) {
-            location.href = "../pages/release.html";
-        } else {
-            sessionStorage.setItem('from', '../pages/release.html');
-            modaldeng.style.display = "block";
-        }
-        }
-    };
-// 弹出头像下拉列表
-    var head_img=$("#head_image");
-    var liebiao=$("#liebiao");
-    var zhongxin=$(".liebiao1");
-    head_img.onmouseover=function() {
-        liebiao.style.display="block";
-    };
-    head_img.onmouseout=function(){
-        liebiao.style.display="None";
-    };
-    // 跳转个人中心
-    zhongxin.onclick=function(){
-        location.href = "../pages/UserTenantList.html";
     };
     // 弹出注册模态框
     btn.onclick = function () {
@@ -215,7 +169,7 @@
                     }else {
                         location.href='homepage.html';
                     }
-
+                    alert(res.status_text);
                     console.log(res.token);
                 }else{
                     alert(res.status_text);
