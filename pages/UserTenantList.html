@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../css/UserTenantList.css">
     <link rel="stylesheet" href="../css/foot.css">
+    <link rel="stylesheet" href="../css/model.css">
+    <link rel="stylesheet" href="../css/header.css">
     <!--<link rel="stylesheet" type="text/css" href="//jci.xiaozhustatic1.com/e19011802/xzcss?css=global,manage,rz,nyroModal,jquery-ui,dialog_front,zhima_icon_div2,nationalsecurity,slideBar,data" />-->
 
 
@@ -14,44 +16,175 @@
 </head>
 <body>
 <!--导航条开始-->
-<nav class="navbar navbar-default">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header" >
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <!--<span class="sr-only">Toggle navigation</span>-->
-                <!--<span class="icon-bar"></span>-->
-                <!--<span class="icon-bar"></span>-->
-                <!--<span class="icon-bar"></span>-->
+<!------------------------------------------------头部-------------------------------->
+<nav class="navbar navbar-default ">
+    <div class="container-fluid header_top ">
+        <div class="container w1">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
 
-            </button>
-            <a href="#"><img src="../images/logo3.png" alt="" style="width: 70px;height: 42px"></a>
-            <!--<a class="navbar-brand main-color" href="#">佳宿</a>-->
-            <span class="advertisement">为您提供最佳的住宿选择</span>
+                <a class="navbar-brand m1" href="homepage.html"><img src="../images/logo3.png" alt="Brand"></a>
+
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!--<form class="navbar-form navbar-left">-->
+                <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" placeholder="Search">-->
+                <!--</div>-->
+                <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                <!--</form>-->
+                <!--导航栏右侧-->
+                <ul class="nav navbar-nav navbar-right" id="meiyou">
+                    <li><a href="#" id="showMode2">登陆</a></li>
+                    <li><a href="#" id="showModel">注册</a></li>
+                    <li><a href="#" id="my_order">个人中心</a></li>
+                    <!--<li><a href="#">短租指南</a></li>-->
+                    <li><a href="#" class="my_publish"><div class="topinner">发布房源</div></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right " id="you">
+
+                    <li><a href="#" ><div class="head_image" id="head_image">
+                        <div class="liebiao" id="liebiao">
+                            <div class="liebiao1" >个人中心</div>
+                            <div class="liebiao2">退出登录</div>
+                        </div><img class="img-circle" src="../images/toux1.jpg" alt=""></div>
+                    </a></li>
+                    <li class="nickname">守夜人</li>
+
+                    <!--<li><a href="#">短租指南</a></li>-->
+                    <li><a href="#" class="my_publish"><div class="topinner">发布房源</div></a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-
-            <ul class="nav navbar-nav navbar-right">
-
-                <li><a href="#">用户指南</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户昵称<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </li>
-                <li><a href="#" class="yuan main-color">发布房间</a></li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+<!------------------------------------------------------注册--------------------------------------------->
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <header class="modal-header">
+            <h4>注册</h4>
+            <span class="close">×</span>
+        </header>
+        <div class="modal-body">
+            <table>
+                <form action="#">
+                    <!--<tr>-->
+                    <!--<td class="col-1">昵称</td>-->
+                    <!--<td><input type="text" id="nickname" ></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td class="col-1"></td>-->
+                    <!--<td><div id="sss_error"></div></td>-->
+                    <!--</tr>-->
+                    <tr>
+                        <td class="col-1">手机号</td>
+                        <td><input type="text" id="txt_telephone" value="18715176483"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="telephone_error"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1">用户名</td>
+                        <td><input type="text" id="txt_username" ></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="username_error"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1">密码</td>
+                        <td><input type="password" id="txt_password"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="password_error"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1">确认密码</td>
+                        <td><input type="password" id="txt_password_confirm"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="confirm_error"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><input type="checkbox" id="check1" name="sport" class="check1" value="run" checked> <label for="check1">我同意
+                            <a href="">《服务协议》</a>, <a href="">《隐私服务条款》</a> </label></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><input type="button" class="btn-regist" value="立即注册"  id="btn_regist"></td>
+                    </tr>
+
+                </form>
+            </table>
+        </div>
+        <footer class="modal-footer">
+            <!--<button id="cancel">取消</button>-->
+            <!--<button id="sure">确定</button>-->
+        </footer>
+    </div>
+</div>
+<!------------------------------------------------------登陆--------------------------->
+
+<div id="modadeng" class="modal">
+    <div class="modal-content">
+        <header class="modal-header">
+            <h4>登陆</h4>
+            <span class="close1">×</span>
+        </header>
+        <div class="modal-body">
+            <table>
+                <form action="#">
+                    <tr>
+                        <td class="col-1">手机号</td>
+                        <td><input type="text" id="txt_telephone1" value="18715176483"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="telephone1_error"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1">密码</td>
+                        <td><input type="password" id="txt_password1"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="password1_error"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="v_container" style="width: 400px;height: 40px;"></div>
+                            <input type="text" id="code_input" value="" placeholder="请输入验证码"/>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="yanzhen_error"></div></td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><input type="button" class="btn-regist" value="立即登录"  id="btn_regist1"></td>
+                    </tr>
+
+                </form>
+            </table>
+        </div>
+        <footer class="modal-footer">
+            <!--<button id="cancel">取消</button>-->
+            <!--<button id="sure">确定</button>-->
+        </footer>
+    </div>
+</div>
 <!--导航条结束-->
 
 <!--主体部分开始-->
@@ -63,7 +196,7 @@
                 <ul class="nav nav-pills  nav-stacked min-w" id="choose-lists">
                     <li role="presentation">
                         <a href="dingdan.html" class="choose-lists-order">
-                        <span class="glyphicon glyphicon-list-alt mid-font main-color"></span>
+                            <span class="glyphicon glyphicon-list-alt mid-font main-color"></span>
                             <span class="sm-font choose-list">订单</span></a></li>
 
                     <li role="presentation"><a href="#" class="choose-lists-inform">
@@ -95,21 +228,21 @@
             <div class="col-md-10 col-sm-10 col-xs-10 content" >
                 <!--订单模板-->
                 <!--<div class="row con_order">-->
-                    <!--<h2>暂无订单</h2>-->
+                <!--<h2>暂无订单</h2>-->
                 <!--</div>-->
                 <!--订单模板end-->
 
                 <!--通知模板-->
                 <!--<div class="con_inform">-->
-                    <!--<div class="title_inform left">喜迎猪年，小猪福利滚滚来！积分换券限时5折，先换券，后下单！前往“我”-“积分”进行兑换>>></div>-->
-                    <!--<div class="right"><span class="glyphicon glyphicon-remove"></span></div>-->
-                    <!--<div class="date tag"></div>-->
+                <!--<div class="title_inform left">喜迎猪年，小猪福利滚滚来！积分换券限时5折，先换券，后下单！前往“我”-“积分”进行兑换>>></div>-->
+                <!--<div class="right"><span class="glyphicon glyphicon-remove"></span></div>-->
+                <!--<div class="date tag"></div>-->
                 <!--</div>-->
                 <!--通知模板end-->
 
                 <!--入住人模板-->
                 <!--<div class="con">-->
-                    <!--<h2>暂无信息</h2>-->
+                <!--<h2>暂无信息</h2>-->
                 <!--</div>-->
                 <!--<div class="add-user right"><span class="glyphicon glyphicon-plus"></span> <span>添加入住人</span></div>-->
                 <!--入住人模板end-->
@@ -122,52 +255,52 @@
 
                 <!--收藏模板-->
                 <!--<div class="row">-->
-                    <!--<div class=""></div>-->
+                <!--<div class=""></div>-->
                 <!--</div>-->
                 <!--<div class="row collection">-->
-                    <!--<div class="col-md-6 col-sm-12 col-xs-12">-->
+                <!--<div class="col-md-6 col-sm-12 col-xs-12">-->
 
-                        <!--<div class="con-collection" id="001">-->
-                            <!--<div><img src="../images/1.jpg" alt="" class="img-responsive" ></div>-->
-                            <!--<div><span class="title_collection ">江汉路地铁口/武汉市中心/汉口江滩/舒适民宿</span></div>-->
-                            <!--<div class="tag"><span class="">整套出租</span><span>/一室一厅</span><span>/一床</span><span>/宜住两人</span></div>-->
-                            <!--<div >￥<span class="mid-font">444</span>起/晚</div>-->
-                            <!--<div class="del"><span class="glyphicon glyphicon-remove"></span><div class="dels"></div></div>-->
-                        <!--</div>-->
+                <!--<div class="con-collection" id="001">-->
+                <!--<div><img src="../images/1.jpg" alt="" class="img-responsive" ></div>-->
+                <!--<div><span class="title_collection ">江汉路地铁口/武汉市中心/汉口江滩/舒适民宿</span></div>-->
+                <!--<div class="tag"><span class="">整套出租</span><span>/一室一厅</span><span>/一床</span><span>/宜住两人</span></div>-->
+                <!--<div >￥<span class="mid-font">444</span>起/晚</div>-->
+                <!--<div class="del"><span class="glyphicon glyphicon-remove"></span><div class="dels"></div></div>-->
+                <!--</div>-->
 
-                    <!--</div>-->
-                    <!--<div class="col-md-6 col-sm-12 col-xs-12">-->
+                <!--</div>-->
+                <!--<div class="col-md-6 col-sm-12 col-xs-12">-->
 
-                        <!--<div class="con-collection" id="001">-->
-                            <!--<div><img src="../images/1.jpg" alt="" class="img-responsive" ></div>-->
-                            <!--<div><span class="title_collection ">江汉路地铁口/武汉市中心/汉口江滩/舒适民宿</span></div>-->
-                            <!--<div class="tag"><span class="">整套出租</span><span>/一室一厅</span><span>/一床</span><span>/宜住两人</span></div>-->
-                            <!--<div >￥<span class="mid-font">444</span>起/晚</div>-->
-                            <!--<div class="del"><span class="glyphicon glyphicon-remove"></span><div class="dels"></div></div>-->
-                        <!--</div>-->
+                <!--<div class="con-collection" id="001">-->
+                <!--<div><img src="../images/1.jpg" alt="" class="img-responsive" ></div>-->
+                <!--<div><span class="title_collection ">江汉路地铁口/武汉市中心/汉口江滩/舒适民宿</span></div>-->
+                <!--<div class="tag"><span class="">整套出租</span><span>/一室一厅</span><span>/一床</span><span>/宜住两人</span></div>-->
+                <!--<div >￥<span class="mid-font">444</span>起/晚</div>-->
+                <!--<div class="del"><span class="glyphicon glyphicon-remove"></span><div class="dels"></div></div>-->
+                <!--</div>-->
 
-                    <!--</div>-->
-                    <!--<div class="col-md-6 col-sm-12 col-xs-12">-->
+                <!--</div>-->
+                <!--<div class="col-md-6 col-sm-12 col-xs-12">-->
 
-                        <!--<div class="con-collection" id="001">-->
-                            <!--<div><img src="../images/1.jpg" alt="" class="img-responsive" ></div>-->
-                            <!--<div><span class="title_collection ">江汉路地铁口/武汉市中心/汉口江滩/舒适民宿</span></div>-->
-                            <!--<div class="tag"><span class="">整套出租</span><span>/一室一厅</span><span>/一床</span><span>/宜住两人</span></div>-->
-                            <!--<div >￥<span class="mid-font">444</span>起/晚</div>-->
-                            <!--<div class="del"><span class="glyphicon glyphicon-remove"></span><div class="dels"></div></div>-->
-                        <!--</div>-->
+                <!--<div class="con-collection" id="001">-->
+                <!--<div><img src="../images/1.jpg" alt="" class="img-responsive" ></div>-->
+                <!--<div><span class="title_collection ">江汉路地铁口/武汉市中心/汉口江滩/舒适民宿</span></div>-->
+                <!--<div class="tag"><span class="">整套出租</span><span>/一室一厅</span><span>/一床</span><span>/宜住两人</span></div>-->
+                <!--<div >￥<span class="mid-font">444</span>起/晚</div>-->
+                <!--<div class="del"><span class="glyphicon glyphicon-remove"></span><div class="dels"></div></div>-->
+                <!--</div>-->
 
-                    <!--</div>-->
-                    <!--<div class="col-md-6 col-sm-12 col-xs-12">-->
+                <!--</div>-->
+                <!--<div class="col-md-6 col-sm-12 col-xs-12">-->
 
-                        <!--<div class="con-collection" id="001">-->
-                            <!--<div><img src="../images/1.jpg" alt="" class="img-responsive" ></div>-->
-                            <!--<div><span class="title_collection ">江汉路地铁口/武汉市中心/汉口江滩/舒适民宿</span></div>-->
-                            <!--<div class="tag"><span class="">整套出租</span><span>/一室一厅</span><span>/一床</span><span>/宜住两人</span></div>-->
-                            <!--<div >￥<span class="mid-font">444</span>起/晚</div>-->
-                            <!--<div class="del"><span class="glyphicon glyphicon-remove"></span><div class="dels"></div></div>-->
-                        <!--</div>-->
-                    <!--</div>-->
+                <!--<div class="con-collection" id="001">-->
+                <!--<div><img src="../images/1.jpg" alt="" class="img-responsive" ></div>-->
+                <!--<div><span class="title_collection ">江汉路地铁口/武汉市中心/汉口江滩/舒适民宿</span></div>-->
+                <!--<div class="tag"><span class="">整套出租</span><span>/一室一厅</span><span>/一床</span><span>/宜住两人</span></div>-->
+                <!--<div >￥<span class="mid-font">444</span>起/晚</div>-->
+                <!--<div class="del"><span class="glyphicon glyphicon-remove"></span><div class="dels"></div></div>-->
+                <!--</div>-->
+                <!--</div>-->
                 <!--</div>-->
                 <!--收藏模板end-->
 
@@ -187,7 +320,7 @@
                                 <label class="tag">手机号码：</label><span  class="info">15656933380</span><span class="info main-color pointer">修改</span>
                             </li>
                             <li class="min-font">
-                            <label class="tag">email：</label><span>未填写</span><span class="info main-color pointer">修改</span>
+                                <label class="tag">email：</label><span>未填写</span><span class="info main-color pointer">修改</span>
                             </li>
                         </ul>
                         <div class="user_head_img col-xs-3 col-sm-3 col-md-3">
@@ -211,7 +344,7 @@
                                 <label class="tag">身份证：</label><span  class="info">342423********6016</span>
                             </li>
                             <!--<li class="sm-font">-->
-                                <!--<label class="tag">护照：</label><span>未填写</span>-->
+                            <!--<label class="tag">护照：</label><span>未填写</span>-->
                             <!--</li>-->
                         </ul>
                     </div>
@@ -256,7 +389,7 @@
     </div>
 
 
-    </div>
+</div>
 
 
 <!--主体部分结束-->
@@ -305,6 +438,8 @@
 <!--<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>-->
 <!--<script src="../node_modules/mockjs/dist/mock-min.js"></script>-->
 <!--<script src="../js/mock_model.js"></script>-->
+<script src="../js/gVerify.js"></script>
+<script src="../js/header.js"></script>
 <script src="../js/utils.js"></script>
 <script src="../js/UserTenantList.js"></script>
 

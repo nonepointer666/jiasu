@@ -8,25 +8,33 @@
     <meta name="description" content="佳宿房源搜索">
     <title>佳宿房源搜索</title>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/foot.css">
-    <link rel="stylesheet" href="http://minsustatic.ziroom.com/portal/css/common.css?v=js.version.20171116">
     <link rel="stylesheet" type="text/css" href="http://minsustatic.ziroom.com/portal/css/list.css">
     <link rel="stylesheet" href="../css/search.css">
     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/model.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/sheng.css">
+    <link rel="stylesheet" href="http://minsustatic.ziroom.com/portal/css/common.css?v=js.version.20171116">
+    <link rel="stylesheet" type="text/css" href="http://minsustatic.ziroom.com/portal/css/list.css">
 
 
 
 </head>
 <body>
 <!--头部-->
-<nav class="navbar navbar-default navbar-fixed-top">
+<!------------------------------------------------头部-------------------------------->
+<nav class="navbar navbar-default ">
     <div class="container-fluid header_top ">
         <div class="container w1">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand m1" href="#"><img src="../images/logo3.png" alt="Brand"></a>
+
+                <a class="navbar-brand m1" href="homepage.html"><img src="../images/logo3.png" alt="Brand"></a>
+
+
             </div>
+
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <!--<form class="navbar-form navbar-left">-->
@@ -35,19 +43,155 @@
                 <!--</div>-->
                 <!--<button type="submit" class="btn btn-default">Submit</button>-->
                 <!--</form>-->
-                <ul class="nav navbar-nav navbar-right">
+                <!--导航栏右侧-->
+                <ul class="nav navbar-nav navbar-right" id="meiyou">
                     <li><a href="#" id="showMode2">登陆</a></li>
                     <li><a href="#" id="showModel">注册</a></li>
-                    <li><a href="#">我的订单</a></li>
-                    <li><a href="#">短租指南</a></li>
-                    <li><a href="#">
-                        <div class="topinner">发布房源</div>
+                    <li><a href="#" id="my_order">个人中心</a></li>
+                    <!--<li><a href="#">短租指南</a></li>-->
+                    <li><a href="#" class="my_publish"><div class="topinner">发布房源</div></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right " id="you">
+
+                    <li><a href="#" ><div class="head_image" id="head_image">
+                        <div class="liebiao" id="liebiao">
+                            <div class="liebiao1" >个人中心</div>
+                            <div class="liebiao2">退出登录</div>
+                        </div><img class="img-circle" src="../images/toux1.jpg" alt=""></div>
                     </a></li>
+                    <li class="nickname">守夜人</li>
+
+                    <!--<li><a href="#">短租指南</a></li>-->
+                    <li><a href="#" class="my_publish"><div class="topinner">发布房源</div></a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
+
         </div>
     </div><!-- /.container-fluid -->
 </nav>
+<!------------------------------------------------------注册--------------------------------------------->
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <header class="modal-header">
+            <h4>注册</h4>
+            <span class="close">×</span>
+        </header>
+        <div class="modal-body">
+            <table>
+                <form action="#">
+                    <!--<tr>-->
+                    <!--<td class="col-1">昵称</td>-->
+                    <!--<td><input type="text" id="nickname" ></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td class="col-1"></td>-->
+                    <!--<td><div id="sss_error"></div></td>-->
+                    <!--</tr>-->
+                    <tr>
+                        <td class="col-1">手机号</td>
+                        <td><input type="text" id="txt_telephone" value="18715176483"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="telephone_error"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1">用户名</td>
+                        <td><input type="text" id="txt_username" ></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="username_error"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1">密码</td>
+                        <td><input type="password" id="txt_password"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="password_error"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1">确认密码</td>
+                        <td><input type="password" id="txt_password_confirm"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="confirm_error"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><input type="checkbox" id="check1" name="sport" class="check1" value="run" checked> <label for="check1">我同意
+                            <a href="">《服务协议》</a>, <a href="">《隐私服务条款》</a> </label></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><input type="button" class="btn-regist" value="立即注册"  id="btn_regist"></td>
+                    </tr>
+
+                </form>
+            </table>
+        </div>
+        <footer class="modal-footer">
+            <!--<button id="cancel">取消</button>-->
+            <!--<button id="sure">确定</button>-->
+        </footer>
+    </div>
+</div>
+<!------------------------------------------------------登陆--------------------------->
+
+<div id="modadeng" class="modal">
+    <div class="modal-content">
+        <header class="modal-header">
+            <h4>登陆</h4>
+            <span class="close1">×</span>
+        </header>
+        <div class="modal-body">
+            <table>
+                <form action="#">
+                    <tr>
+                        <td class="col-1">手机号</td>
+                        <td><input type="text" id="txt_telephone1" value="18715176483"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="telephone1_error"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1">密码</td>
+                        <td><input type="password" id="txt_password1"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="password1_error"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="v_container" style="width: 400px;height: 40px;"></div>
+                            <input type="text" id="code_input" value="" placeholder="请输入验证码"/>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><div id="yanzhen_error"></div></td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-1"></td>
+                        <td><input type="button" class="btn-regist" value="立即登录"  id="btn_regist1"></td>
+                    </tr>
+
+                </form>
+            </table>
+        </div>
+        <footer class="modal-footer">
+            <!--<button id="cancel">取消</button>-->
+            <!--<button id="sure">确定</button>-->
+        </footer>
+    </div>
+</div>
 <!--头部end-->
 <div class="main_search">
     <div class="area">
@@ -56,14 +200,30 @@
                 <ul class="search_bar_l_ul" id="start_input">
                     <!--请选择城市-->
                     <li class="city_li ">
-                        <div class="ipt_box">
-                            <input id="cityIpt" class="city_ipt ipt" type="text"
-                                   placeholder="请选择城市" readonly="readonly" data-citycode="120000">
+                        <div class="ipt_box o1">
+                            <input  id = "addr-show02" class="gai " type="text"
+                                    placeholder="请选择城市" readonly="readonly" data-citycode="120000">
                             <i class="icons icon_city"></i>
                         </div>
-                        <ul id="cityList" class="select_list city_list">
-                        </ul>
+                        <div  class="sheng1">
+                            <fieldset >
+                                <div  id = "addr-choice" >
+                                    <ul  id = "title-wrap" >
+                                        <li  value = "0" >省份</li >
+                                        <li  value = "1" >城市</li >
+                                        <li  value = "2" >县区</li >
+                                    </ul >
+                                    <div  id = "show-panel" >
+                                        <ul  id = "addr-wrap" >
+                                        </ul >
+                                    </div >
+                                </div >
+                                <button  type = "button" id="c1" class = "btn met2" >确定</button >
+                            </fieldset >
+                        </div >
                     </li>
+                    <!-------------------------------省市三级----------------------------------->
+
                     <!--入住日期-->
                     <li class="start_date_li">
                         <input id="start" class="date_ipt" type="text" placeholder="入住日期" readonly="readonly"
@@ -120,32 +280,20 @@
                     </td>
                 </tr>
                 <!--预订类型-->
-                <tr>
-                    <td class="td_t">房源风格
-                    </td>
-                    <td data-type="preview" class="td_c td_md house_styles active ">
-                        <div class="tags" data-preview="-1">不限</div>
-                    </td>
-                    <td data-type="preview" class="td_c td_md house_styles">
-                        <div class="tags" data-preview="1">民居</div>
-                    </td>
-                    <td data-type="preview" class="td_c td_md house_styles">
-                        <div class="tags" data-preview="2">客栈</div>
-                    </td>
-                    <td data-type="preview" class="td_c td_md house_styles">
-                        <div class="tags" data-preview="2">别墅</div>
-                    </td>
-                    <td data-type="preview" class="td_c td_md house_styles">
-                        <div class="tags" data-preview="2">老洋房</div>
-                    </td>
-                    <td data-type="preview" class="td_c td_md house_styles">
-                        <div class="tags" data-preview="2">海景房</div>
-                    </td>
-                    <td data-type="preview" class="td_c td_md house_styles">
-                        <div class="tags" data-preview="2">公寓</div>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
+                <!--<tr>-->
+                <!--<td class="td_t">预订类型-->
+                <!--</td>-->
+                <!--<td data-type="preview" class="td_c td_md active ">-->
+                <!--<div class="tags" data-preview="-1">不限</div>-->
+                <!--</td>-->
+                <!--<td data-type="preview" class="td_c td_md ">-->
+                <!--<div class="tags" data-preview="1">立即预订</div>-->
+                <!--</td>-->
+                <!--<td data-type="preview" class="td_c td_md ">-->
+                <!--<div class="tags" data-preview="2">申请预订</div>-->
+                <!--</td>-->
+                <!--<td>&nbsp;</td>-->
+                <!--</tr>-->
                 <!--价格范围-->
                 <tr class="lg">
                     <td class="td_t">价格范围</td>
@@ -182,7 +330,7 @@
                     <input type="hidden" id="end_time" value="">
                     <input type="hidden" id="number_of_people" value="2">
                     <input type="hidden" id="rent_style" value="0">
-                    <input type="hidden" id="house_style" value="民居">
+                    <input type="hidden" id="preview" value="-1">
                     <input type="hidden" id="startPrice" value="0">
                     <input type="hidden" id="endPrice" value="10000">
                     <input type="hidden" id="lastPrice" value="">
@@ -197,68 +345,68 @@
         <div class="house_list">
             <div class="house_item clearfix">
                 <a class="disblock clearfix" target="_blank">
-                <div class="l clearfix">
-                    <div class="img"><img
-                            src="https://img.ziroom.com/minsu/g2/M00/C0/1C/ChAFD1r1kIaAXw7rAAMSRDxzcfw925.jpg_Z_720_480.jpg">
-                    </div>
-                    <div class="txt"><h1>近石家庄学院 东二环东明家具城旁花溪畔主卧</h1>
-                        <h3></h3>
-                        <div class="star_box clearfix"><span>独立房间</span><span>/可住</span><span>2</span><span>人</span>
-                            <ul class="stars clearfix" data-val="5">
-                                <li class="star active"></li>
-                                <li class="star active"></li>
-                                <li class="star active"></li>
-                                <li class="star active"></li>
-                                <li class="star active"></li>
+                    <div class="l clearfix">
+                        <div class="img"><img
+                                src="https://img.ziroom.com/minsu/g2/M00/C0/1C/ChAFD1r1kIaAXw7rAAMSRDxzcfw925.jpg_Z_720_480.jpg">
+                        </div>
+                        <div class="txt"><h1>近石家庄学院 东二环东明家具城旁花溪畔主卧</h1>
+                            <h3></h3>
+                            <div class="star_box clearfix"><span>独立房间</span><span>/可住</span><span>2</span><span>人</span>
+                                <ul class="stars clearfix" data-val="5">
+                                    <li class="star active"></li>
+                                    <li class="star active"></li>
+                                    <li class="star active"></li>
+                                    <li class="star active"></li>
+                                    <li class="star active"></li>
+                                </ul>
+                                <span class="score">5分</span></div>
+                            <div class="price_box"><span>¥</span><span class="price">100</span><span>/晚</span></div>
+                            <ul class="tag_list">
+                                <li>2居</li>
+                                <li>1张床</li>
                             </ul>
-                            <span class="score">5分</span></div>
-                        <div class="price_box"><span>¥</span><span class="price">100</span><span>/晚</span></div>
-                        <ul class="tag_list">
-                            <li>2居</li>
-                            <li>1张床</li>
-                        </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="r">
-                    <dt class="headimg"><img
-                            src="https://img.ziroom.com/minsu/g2/M00/8E/02/ChAFD1nu1zKAaQKNAABjBgDghQ8379.jpg_Z_120_120.jpg">
-                    </dt>
-                    <dd>房东</dd>
-                    <dd class="name_dd">青年E家人</dd>
-                </div>
-            </a></div>
+                    <div class="r">
+                        <dt class="headimg"><img
+                                src="https://img.ziroom.com/minsu/g2/M00/8E/02/ChAFD1nu1zKAaQKNAABjBgDghQ8379.jpg_Z_120_120.jpg">
+                        </dt>
+                        <dd>房东</dd>
+                        <dd class="name_dd">青年E家人</dd>
+                    </div>
+                </a></div>
 
             <div class="house_item clearfix">
                 <a class="disblock clearfix" target="_blank">
-                <div class="l clearfix">
-                    <div class="img"><img src="../images/21.jpg">
-                    </div>
-                    <div class="txt"><h1>近石家庄学院 东二环东明家具城旁花溪畔主卧</h1>
-                        <h3></h3>
-                        <div class="star_box clearfix"><span>独立房间/可住2人</span>
-                            <ul class="stars clearfix" data-val="5">
-                                <li class="star active"></li>
-                                <li class="star active"></li>
-                                <li class="star active"></li>
-                                <li class="star active"></li>
-                                <li class="star active"></li>
+                    <div class="l clearfix">
+                        <div class="img"><img src="../images/21.jpg">
+                        </div>
+                        <div class="txt"><h1>近石家庄学院 东二环东明家具城旁花溪畔主卧</h1>
+                            <h3></h3>
+                            <div class="star_box clearfix"><span>独立房间/可住2人</span>
+                                <ul class="stars clearfix" data-val="5">
+                                    <li class="star active"></li>
+                                    <li class="star active"></li>
+                                    <li class="star active"></li>
+                                    <li class="star active"></li>
+                                    <li class="star active"></li>
+                                </ul>
+                                <span class="score">5分</span></div>
+                            <div class="price_box"><span>¥</span><span class="price">100</span><span>/晚</span></div>
+                            <ul class="tag_list">
+                                <li>2居</li>
+                                <li>1双人床</li>
                             </ul>
-                            <span class="score">5分</span></div>
-                        <div class="price_box"><span>¥</span><span class="price">100</span><span>/晚</span></div>
-                        <ul class="tag_list">
-                            <li>2居</li>
-                            <li>1双人床</li>
-                        </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="r">
-                    <dt class="headimg"><img
-                            src="https://img.ziroom.com/minsu/g2/M00/8E/02/ChAFD1nu1zKAaQKNAABjBgDghQ8379.jpg_Z_120_120.jpg">
-                    </dt>
-                    <dd>房东</dd>
-                    <dd class="name_dd">青年E家人</dd>
-                </div>
-            </a></div>
+                    <div class="r">
+                        <dt class="headimg"><img
+                                src="https://img.ziroom.com/minsu/g2/M00/8E/02/ChAFD1nu1zKAaQKNAABjBgDghQ8379.jpg_Z_120_120.jpg">
+                        </dt>
+                        <dd>房东</dd>
+                        <dd class="name_dd">青年E家人</dd>
+                    </div>
+                </a></div>
         </div>
         <!--分页-->
         <ul class="page_box">
@@ -272,7 +420,6 @@
         </ul>
         <input type="hidden" id="page" value="1">
         <div id="loadMore"></div>
-
     </div>
 </div>
 
@@ -330,9 +477,13 @@
     </div>
 </div>
 <!--foot-end-->
-
+<script src="../js/gVerify.js"></script>
+<script src="../js/header.js"></script>
 <script src="../js/utils.js"></script>
 <script src="../js/search.js"></script>
+<script src="../js/city.js"></script>
+<script src="../js/city02.js"></script>
+<script src="../js/method2.js"></script>
 <!-- 全局js -->
 <script src="../js/jq.js"></script>
 <script src="../js/common.js"></script>

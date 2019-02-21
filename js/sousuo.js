@@ -5,18 +5,17 @@
     var city=document.querySelector('#addr-show02');
     var tishi=document.querySelector('#citytishi');
     function bijiao() {
-       if (ru.value && likai.value &&checkcity()){
-           if (ru.value < likai.value) {
-               sessionStorage.setItem("address",city.value)
-               location.href="pages/search1.html"
-       }
-           else {
-               alert('入住时间不能大于离宿时间');
-           }
+        if (ru.value && likai.value && city.value){
+            if (ru.value < likai.value) {
+                location.href="../pages/search1.html"
+            }
+            else {
+                alert('入住时间不能大于离宿时间');
+            }
 
-       }else {
-           alert('请选择入住与离宿时间');
-       }
+        }else {
+            alert('请选择入住与离宿时间');
+        }
     }
     function checkcity(){
         if (city.value){
