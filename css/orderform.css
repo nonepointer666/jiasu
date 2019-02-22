@@ -184,6 +184,8 @@ height: 16px;
     background: #ff4081;
     margin-left: -15px;
     margin-top: 30px;
+    margin-bottom: 120px;
+    cursor:pointer;
 
 }
 .right_outer{

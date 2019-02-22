@@ -24,7 +24,13 @@
         meiyou.style.display='block';
         you.style.display='None';
     }
-
+    // 获取头像和昵称
+    function person_information() {
+        var xinxi;
+        var url ="http://192.168.2.40:8080/user/login";
+        var data={"user_id":localStorage.getItem('user_id')}
+        
+    }
     // 退出
     var tuichu=$('.liebiao2');
     tuichu.onclick=function () {
@@ -246,7 +252,9 @@
             var user={"telephone":tel1.value,"password":password1.value};
             postData('http://192.168.2.40:8080/user/login',user,function (res) {
                 if (res && res.status_code=='10003'){
+                    console.log(res)
                     localStorage.setItem('token',res.token);
+                    localStorage.setItem('user_id',res.user_id);
                     if (sessionStorage.getItem('from')){
                         location.href=sessionStorage.getItem('from');
                     }else {

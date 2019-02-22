@@ -81,7 +81,7 @@
     }
     // 获取所有个人数据
     function data_all() {
-        var data_all
+        var data_all;
         var url = "http://127.0.0.1:8080/user/data";
         var data = {"id": localStorage.getItem('id'),
             "nick_name":"0",

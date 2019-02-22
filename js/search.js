@@ -2,7 +2,7 @@
     function $(str) {
         return document.querySelector(str)
     }
-    var require={"page":"0"};
+    var require={};
     var cityIpt=$("#cityIpt");
     var start=$("#start");
     var end=$("#end");
@@ -21,10 +21,11 @@
     var page=$("#page");
     var url_search="http://127.0.0.1:8080/user/search";
 
-var all_room={};
+
 // 分页
 
-function pagess(b) {
+function pagess(all_room) {
+    b=all_room.length
     var ul=$(".page_box");
     b=Math.ceil(b / 4);
     if (b == 1) {
@@ -40,7 +41,15 @@ function pagess(b) {
             <li class="pages">2</li>
             <li class="page_boxs" id="next">下一个</li>
             <li class="page_boxs" id="last_page">尾页</li>`
-    } else if (b >= 3) {
+    }else if (b==0){
+        ul.innerHTML = `<li class="page_boxs" id="index_page">首页</li>
+            <li class="page_boxs" id="previous">上一个</li>
+            <li class="pages page_active">0</li>
+            <li class="page_boxs" id="next">下一个</li>
+            <li class="page_boxs" id="last_page">尾页</li>`;
+        return;
+    }
+    else if (b >= 3) {
         ul.innerHTML = `<li class="page_boxs" id="index_page">首页</li>
             <li class="page_boxs" id="previous">上一个</li>
             <li class="pages page_active">1</li>
@@ -143,6 +152,9 @@ function pagess(b) {
 
 // 刷新内容
     function renovate(res) {
+    if (!res){
+        return;
+    }
         house_list.innerHTML="";
         for (var l of res){
             if (l["rent_style"]==0){
@@ -199,11 +211,11 @@ function pagess(b) {
     }
     //搜索
     function search(require){
-        require["house_style"]=sessionStorage.getItem("house_style");
+        var all_room=[];
         start_time.value=start.value;
         end_time.value=end.value;
         for (var i of requireList.children){
-            if(i.getAttribute("id")=="address" || i.getAttribute("id")=="key_word"){
+            if(i.getAttribute("id")=="address" || i.getAttribute("id")=="key_word" || i.getAttribute("id")=="house_style" || i.getAttribute("id")=="rent_style"){
                 require[i.getAttribute("id")]="%"+i.value+"%";
             }
             else {
@@ -211,23 +223,32 @@ function pagess(b) {
             }
         }
         postData(url_search,require,function (res) {
+            console.log(require);
             house_list.innerHTML="";
-            all_room=res;
-            res=all_room.slice(0,4);
-            for (var l of res){
-                if (l["rent_style"]==0){
-                    l["rentStyle"]="整套出租";
-                }
-                else if (l["rent_style"]==-1){
-                    l["rentStyle"]="不限";
-                }
-                else if (l["rent_style"]==1){
-                    l["rentStyle"]="独立单间";
-                }
-                else if (l["rent_style"]==2){
-                    l["rentStyle"]="合住房间";
-                }
-                house_list.innerHTML+=`<div class="house_item clearfix">
+
+            if(res["status_code"]==40005 || res["status_code"]==40004){
+                all_room=[];
+                house_list.innerHTML=`<div class="search_err">${res["status_text"]}</div>`;
+                console.log(all_room);
+                pagess(all_room);
+            }else {
+                all_room=res;
+                res=all_room.slice(0,4);
+                console.log(all_room);
+                for (var l of res){
+                    if (l["rent_style"]==0){
+                        l["rentStyle"]="整套出租";
+                    }
+                    else if (l["rent_style"]==-1){
+                        l["rentStyle"]="不限";
+                    }
+                    else if (l["rent_style"]==1){
+                        l["rentStyle"]="独立单间";
+                    }
+                    else if (l["rent_style"]==2){
+                        l["rentStyle"]="合住房间";
+                    }
+                    house_list.innerHTML+=`<div class="house_item clearfix">
                 <a class="disblock clearfix" target="_blank" data-room=${l["house_id"]}>
                 <div class="l clearfix">
                     <div class="img"><img src=${l["img_url1"]}>
@@ -258,21 +279,111 @@ function pagess(b) {
                     <dd class="name_dd">${l["nick_name"]}</dd>
                 </div>
             </a></div>`
-            };
-            // 分页
-            pagess(all_room.length);
-            //挑转详情页
-            var rooms=document.querySelectorAll(".house_item");
-            for (var m of rooms){
-                m.onclick=function () {
-                    location.href="../pages/details.html";
+                };
+                // 分页
+                pagess(all_room);
+                //挑转详情页
+                var rooms=document.querySelectorAll(".house_item");
+                for (var m of rooms){
+                    m.onclick=function () {
+                        location.href="../pages/details.html";
+                    }
                 }
+            };
+        });
+    };
+
+    (function(){
+        start_time.value=start.value;
+        end_time.value=end.value;
+        for (var i of requireList.children){
+            if(i.getAttribute("id")=="address" || i.getAttribute("id")=="key_word" ||i.getAttribute("id")=="house_style" ||i.getAttribute("id")=="rent_style"){
+                require[i.getAttribute("id")]="%"+i.value+"%";
             }
+            else {
+                require[i.getAttribute("id")]=i.value;
+            }
+        };
+        if (sessionStorage.getItem("house_style")) {
+            alert(sessionStorage.getItem("house_style"));
+            require["house_style"]="%"+sessionStorage.getItem("house_style")+"%";
+            sessionStorage.removeItem("address");
+        }else if(sessionStorage.getItem("key_word")){
+            require["key_word"]=sessionStorage.getItem("key_word");
+            sessionStorage.removeItem("address");
+        }else if(sessionStorage.getItem("address")){
+            require["address"]=sessionStorage.getItem("address");
+        }
+        postData(url_search,require,function (res) {
+            console.log(require);
+            var all_room=[];
+            house_list.innerHTML="";
+            if(res["status_code"]==40005 || res["status_code"]==40004){
+                all_room=[];
+                house_list.innerHTML=`<h1 class="search_err">${res["status_text"]}</h1>`
+                pagess(all_room);
+            }else {
+                all_room=res;
+                console.log(all_room);
+                res=all_room.slice(0,4);
+                for (var l of res){
+                    if (l["rent_style"]==0){
+                        l["rentStyle"]="整套出租";
+                    }
+                    else if (l["rent_style"]==-1){
+                        l["rentStyle"]="不限";
+                    }
+                    else if (l["rent_style"]==1){
+                        l["rentStyle"]="独立单间";
+                    }
+                    else if (l["rent_style"]==2){
+                        l["rentStyle"]="合住房间";
+                    }
+                    house_list.innerHTML+=`<div class="house_item clearfix">
+                <a class="disblock clearfix" target="_blank" data-room=${l["house_id"]}>
+                <div class="l clearfix">
+                    <div class="img"><img src=${l["img_url1"]}>
+                    </div>
+                    <div class="txt"><h1>${l["room_title"]}</h1>
+                        <h3></h3>
+                        <div class="star_box clearfix"><span>${l["rentStyle"]}/可住${l["number_of_people"]}人</span>
+                            <ul class="stars clearfix" data-val="5">
+                                <li class="star active"></li>
+                                <li class="star active"></li>
+                                <li class="star active"></li>
+                                <li class="star active"></li>
+                                <li class="star active"></li>
+                            </ul>
+                            <span class="score">5分</span></div>
+                        <div class="price_box"><span>¥</span><span class="price">${l["price"]}</span><span>/晚</span></div>
+                        <ul class="tag_list">
+                            <li>${l["house_style"]}</li>
+                            <li>${l["beds"]}张床铺</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="r">
+                    <dt class="headimg"><img
+                            src=${l["icon_url"]}>
+                    </dt>
+                    <dd>房东</dd>
+                    <dd class="name_dd">${l["nick_name"]}</dd>
+                </div>
+            </a></div>`
+                };
+                // 分页
+                pagess(all_room);
+                //挑转详情页
+                var rooms=document.querySelectorAll(".house_item");
+                for (var m of rooms){
+                    m.onclick=function () {
+                        location.href="../pages/details.html";
+                    }
+                }
+            };
 
         });
-    }
-
-    search(require);
+    })();
     //点击传值
     rentstyle.onclick=function (e) {
         if (e.target.nodeName=="DIV") {
@@ -282,12 +393,22 @@ function pagess(b) {
             }
             e.target.parentNode.classList.add("active");
         }
+    };
+    var houseStyle=$(".house_style");
+    var house_style=$("#house_style");
+    houseStyle.onclick=function (e) {
+        if (e.target.nodeName=="DIV") {
+            house_style.value=e.target.getAttribute("data-rent");
+            for (var w of e.target.parentNode.parentNode.children){
+                w.classList.remove("active");
+            }
+            e.target.parentNode.classList.add("active");
+        }
 
     };
 
-    price.onchange=function(){
-        alert(this.value)
-    };
+
+
 
     keywordIpt.oninput=function () {
         key_word.value=keywordIpt.value;
