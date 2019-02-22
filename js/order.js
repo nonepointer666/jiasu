@@ -64,7 +64,7 @@
         var regMobile= /^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,20}$/;
         if (mobile.value) {
             if (regMobile.test(mobile.value)){
-                mobile_error.innerHTML='';
+               mobile_error.innerHTML='';
             } else{
                 mobile_error.innerHTML='*手机号码格式错误';
             }

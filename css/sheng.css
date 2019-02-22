@@ -141,7 +141,6 @@ select {
     top:58px;
     left: 0px;
     z-index: 5;
-    border: 1px solid gainsboro;
 
 
 }
@@ -191,10 +190,4 @@ select {
 }
 .o1{position: relative;
 
-}
-.gai{
-
-    position: absolute;
-    top: -16px;
-    left: -20px;
 }

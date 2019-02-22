@@ -612,37 +612,18 @@
     }) : function () {
         n.ready(), window.laydate = n
     }();
-    var time2=0;
-    var time3=0;
-    var ru=document.querySelector('#test1');
-    function timeSelect(){
-        var  myDate =new Date();
-        var date1=myDate.toLocaleDateString();
-        time2=date1;
-        var date2=new Date();
-        var date3=date2.setDate(myDate.getDate()+1);
-        time3=date3;
-    }
-    setTimeout(timeSelect(),1000*60*60);
+
         lay('#version').html('-v' + laydate.v);
+
     //执行一个laydate实例
     laydate.render({
-        elem: '#test1',//指定元素
-        type:'date',
-        calendar:true,
-        showBottom:false,
-        min:time2,
-
+        elem: '#test1' //指定元素
     });
     lay('#version').html('-v' + laydate.v);
 
     //执行一个laydate实例
     laydate.render({
-        elem: '#test2',//指定元素
-        type:'date',
-        calendar:true,
-        showBottom:false,
-        min:time3,
+        elem: '#test2' //指定元素
     });
 
 }();
